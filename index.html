@@ -1,0 +1,2953 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#171826"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="TokBurger"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<link rel="apple-touch-icon" href="logo.svg"/>
+<title>TokBurger — мәзір мен тапсырыс</title>
+<meta name="description" content="TokBurger — жаңа бургерлер, донер және фастфуд. Онлайн мәзір, себет және WhatsApp арқылы тапсырыс. Instagram: @tokburger_official"/>
+<meta name="keywords" content="TokBurger, бургер, тапсырыс, жеткізу, Қазақстан, фастфуд, онлайн мәзір, донер"/>
+<meta name="author" content="TokBurger"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="TokBurger"/>
+<meta property="og:site_name" content="TokBurger"/>
+<meta property="og:description" content="TokBurger — онлайн мәзір, бургерлер және WhatsApp арқылы тапсырыс беріңіз."/>
+<meta property="og:locale" content="kk_KZ"/>
+<meta property="og:locale:alternate" content="ru_RU"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="TokBurger"/>
+<meta name="twitter:description" content="TokBurger — онлайн мәзір және WhatsApp арқылы тапсырыс."/>
+<link rel="icon" href="logo.svg" type="image/svg+xml"/>
+<link rel="shortcut icon" href="logo.svg" type="image/svg+xml"/>
+<script>
+window.__TB_IS_FILE__=(location.protocol==="file:");
+window.__TB_SITE_ORIGIN__="";
+(function(){
+  if(window.__TB_IS_FILE__)return;
+  var m=document.createElement("link");
+  m.rel="manifest";
+  m.href="manifest.webmanifest";
+  document.head.appendChild(m);
+})();
+(function(){
+  if(window.__TB_IS_FILE__)return;
+  var pub=String(window.__TB_SITE_ORIGIN__||"").trim().replace(/\/$/,"");
+  try{
+    var page=new URL(location.href);
+    page.hash="";page.search="";
+    var path=page.pathname||"/";
+    if(/\/index\.html$/i.test(path))path=path.replace(/\/index\.html$/i,"/")||"/";
+    if(path.length>1&&path.endsWith("/"))path=path.slice(0,-1);
+    var origin=(pub||page.origin).replace(/\/$/,"");
+    var canonical=origin+(path==="/"||path===""?"/":path);
+    var img=new URL("logo.svg",page.href).href;
+    function meta(attr,k,v){var el=document.createElement("meta");el.setAttribute(attr,k);el.content=v;document.head.appendChild(el);}
+    meta("property","og:url",canonical);
+    meta("property","og:image",img);
+    meta("property","og:image:secure_url",img);
+    meta("property","og:image:type","image/svg+xml");
+    meta("property","og:image:alt","TokBurger");
+    meta("name","twitter:image",img);
+    meta("name","twitter:image:alt","TokBurger логотипі");
+    var can=document.createElement("link");can.rel="canonical";can.href=canonical;document.head.appendChild(can);
+    var ld={
+      "@context":"https://schema.org",
+      "@type":"Restaurant",
+      "name":"TokBurger",
+      "description":"TokBurger — онлайн мәзір, бургерлер және WhatsApp арқылы тапсырыс.",
+      "url":canonical,
+      "logo":img,
+      "image":[img],
+      "sameAs":["https://www.instagram.com/tokburger_official/"]
+    };
+    var sc=document.createElement("script");sc.type="application/ld+json";sc.textContent=JSON.stringify(ld);document.head.appendChild(sc);
+  }catch(_){}
+})();
+</script>
+<script>
+(function(){
+  document.write('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"><\/script>');
+})();
+</script>
+<script>
+(function(){
+  var l=document.createElement("link");
+  l.rel="stylesheet";
+  l.href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&family=Unbounded:wght@400;600;700;900&display=swap";
+  document.head.appendChild(l);
+})();
+</script>
+<script>
+(function(){
+  var l=document.createElement("link");
+  l.rel="prefetch";
+  l.href="tb-zhuristik-kiosk.html";
+  document.head.appendChild(l);
+})();
+</script>
+<style>
+/* ── VARS ─────────────────────────────────────────────── */
+:root{
+  --y:#FF5300;--yd:#e64a00;--yl:#fff0e8;
+  --dk:#171826;--dk2:#252535;
+  --wh:#fff;--bg:#FF5300;
+  --card:#fff;--bdr:rgba(0,0,0,.07);
+  --grn:#25D366;--acc:#E53935;--mut:#9a8a60;
+  --r:18px;--rl:22px;--rxl:28px;
+  --sh:0 4px 18px rgba(0,0,0,.1);
+  --shl:0 14px 34px rgba(0,0,0,.2);
+  --gx:16px;
+  --sheet-pad:clamp(18px,5.2vw,26px);
+  --popup-edge:16px;
+  --popup-inner:var(--sheet-pad);
+  --popup-bottom-space:18px;
+  --cream:#fdf8ee;
+  --cream2:#f7f2e8;
+  --sheet-bg:linear-gradient(180deg,#ffffff 0%,#fefcf8 100%);
+  /* Montserrat + Noto: толық кирилл (қ, ң, ғ, ө, …), Unbounded тек латын брендке */
+  --font-kz:'Montserrat','Noto Sans',system-ui,sans-serif;
+}
+.nb-brand,.dw-brand,.ft-brand{font-family:'Unbounded',var(--font-kz),sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-kz);background:var(--bg);min-height:100vh;overflow-x:hidden;color:var(--dk);display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-tap-highlight-color:transparent}
+main{flex:1 0 auto;width:100%;position:relative;z-index:2}
+footer{flex-shrink:0;position:relative;z-index:2}
+img{display:block;max-width:100%}
+button{font-family:var(--font-kz);cursor:pointer;border:none;outline:none;background:none}
+input,textarea{font-family:var(--font-kz);outline:none;border:none}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible{
+  outline:2px solid var(--dk);
+  outline-offset:2px;
+}
+
+/* ── KEYFRAMES ───────────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pop{0%{opacity:0;transform:scale(.88)}55%{transform:scale(1.03)}100%{opacity:1;transform:scale(1)}}
+@keyframes shimmer{0%{background-position:-700px 0}100%{background-position:700px 0}}
+@keyframes slideInR{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes badgePop{0%{transform:scale(0)}70%{transform:scale(1.2)}100%{transform:scale(1)}}
+
+/* ── SKELETON ────────────────────────────────────────── */
+.sk{background:linear-gradient(90deg,rgba(255,255,255,.18) 25%,rgba(255,255,255,.42) 50%,rgba(255,255,255,.18) 75%);background-size:700px 100%;animation:shimmer 1.6s infinite;border-radius:var(--r)}
+
+/* ── OVERLAY ─────────────────────────────────────────── */
+#ovl{position:fixed;inset:0;background:rgba(6,4,0,.55);z-index:490;opacity:0;pointer-events:none;transition:opacity .32s;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+#ovl.on{opacity:1;pointer-events:all}
+#modalDragFill{position:fixed;bottom:0;left:var(--popup-edge);right:var(--popup-edge);height:0;background:#fff;z-index:499;pointer-events:none;will-change:height}
+#modalDragFill.is-on{box-shadow:0 -2px 0 rgba(0,0,0,.04)}
+
+/* ── NAVBAR ──────────────────────────────────────────── */
+.nb{position:sticky;top:0;z-index:200;height:62px;background:var(--dk);display:flex;align-items:center;justify-content:space-between;padding:0 16px;box-shadow:0 1px 0 rgba(255,255,255,.05),0 4px 20px rgba(0,0,0,.3)}
+.nb-logo{display:flex;align-items:center;gap:10px;text-decoration:none;touch-action:manipulation;cursor:pointer}
+.brand-ico{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:visible;border-radius:12px}
+.brand-ico img{width:100%;height:100%;object-fit:contain;display:block}
+.nb-brand{font-family:var(--font-kz);font-size:14px;font-weight:900;letter-spacing:.5px}
+.nb-right{display:flex;align-items:center;gap:8px}
+.lang-btn{height:36px;padding:0 10px 0 8px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--font-kz);font-size:10px;font-weight:800;letter-spacing:.4px;transition:.2s;display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
+.lang-btn:hover{background:rgba(255,255,255,.2)}
+.lang-ic{flex-shrink:0;width:24px;height:16px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.2);object-fit:cover;pointer-events:none;display:block}
+.lang-txt{line-height:1;pointer-events:none}
+.hbtn{display:flex;flex-direction:column;gap:5px;padding:10px 8px;border-radius:12px;transition:background .18s,transform .18s;flex-shrink:0;background:rgba(255,193,7,.12);border:1px solid rgba(255,193,7,.28)}
+.hbtn:hover{background:rgba(255,193,7,.2);transform:translateY(-1px)}
+.hbtn span{display:block;width:22px;height:2.5px;background:var(--y);border-radius:2px;transition:.28s}
+
+/* ── DRAWER ──────────────────────────────────────────── */
+.dw{position:fixed;top:0;right:0;height:100%;width:min(295px,88vw);background:var(--dk);z-index:600;transform:translateX(110%);transition:transform .36s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column;scrollbar-width:none}
+.dw::-webkit-scrollbar{display:none}
+.dw.on{transform:translateX(0)}
+.dw-head{display:flex;align-items:center;gap:10px;padding:18px 16px 14px;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.dw-head-logo{display:flex;align-items:center;gap:10px;flex:1;min-width:0;touch-action:manipulation;cursor:pointer}
+.dw-logo{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:visible;border-radius:12px}
+.dw-logo img{width:100%;height:100%;object-fit:contain;animation:none!important;filter:none!important;will-change:auto}
+.brand-ico picture,.dw-logo picture,.ft-brand-ico picture{display:flex;width:100%;height:100%;align-items:center;justify-content:center;margin:0}
+@media (prefers-reduced-motion:no-preference){
+  .brand-ico img,.ft-brand-ico img{
+    animation:logoIcoLtnPulse 3.05s ease-in-out infinite;
+    will-change:filter;
+  }
+}
+@keyframes logoIcoLtnPulse{
+  0%,100%{filter:drop-shadow(0 0 4px rgba(255,184,104,.48)) drop-shadow(0 0 11px rgba(255,118,42,.26)) brightness(1);}
+  32%{filter:drop-shadow(0 0 10px rgba(255,228,190,.82)) drop-shadow(0 0 22px rgba(255,132,52,.52)) drop-shadow(0 0 34px rgba(234,88,12,.22)) brightness(1.06);}
+  40%{filter:drop-shadow(0 0 6px rgba(255,196,132,.62)) drop-shadow(0 0 16px rgba(255,106,28,.38)) brightness(1.02);}
+  48%{filter:drop-shadow(0 0 4px rgba(255,184,104,.5)) drop-shadow(0 0 12px rgba(255,118,42,.3)) brightness(1);}
+}
+@media (prefers-reduced-motion:reduce){
+  .brand-ico img,.ft-brand-ico img{animation:none!important;filter:drop-shadow(0 0 6px rgba(255,172,96,.4));}
+}
+.dw-brand{font-family:var(--font-kz);font-size:12px;font-weight:900;letter-spacing:.4px;flex:1}
+.dw-x{color:rgba(255,255,255,.45);width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0}
+/* TOKBURGER мәтіні — апельсин найзағай градиент + shimmer */
+.brand-text-ltn{
+  display:inline-block;
+  background:linear-gradient(118deg,#fffefb 0%,#ffeccd 11%,#ffb042 32%,#fffbf7 39%,#ff7018 56%,#ffc078 79%,#ffffff 100%);
+  background-size:280% 100%;
+  background-position:14% 50%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  filter:
+    drop-shadow(0 0 5px rgba(255,190,124,.58))
+    drop-shadow(0 0 14px rgba(255,118,48,.45))
+    drop-shadow(0 0 28px rgba(234,88,12,.26));
+}
+@media (prefers-reduced-motion:no-preference){
+  .brand-text-ltn{animation:brandLtnFlow 5s ease-in-out infinite;}
+}
+@media (prefers-reduced-motion:reduce){
+  .brand-text-ltn{animation:none!important;background-position:42% 50%;}
+}
+@keyframes brandLtnFlow{
+  0%{background-position:10% 50%}
+  38%{background-position:58% 50%}
+  52%{background-position:68% 50%}
+  100%{background-position:95% 50%}
+}
+@supports not ((-webkit-background-clip:text) or (background-clip:text)){
+  .brand-text-ltn{background:none;color:var(--y)!important;-webkit-text-fill-color:var(--y)!important;filter:none;}
+}
+.dw-x:hover{background:rgba(255,255,255,.14);color:#fff}
+.dw-nav{padding:8px 0}
+.dw-a{display:flex;align-items:center;gap:12px;padding:13px 20px;color:rgba(255,255,255,.6);font-size:13px;font-weight:700;transition:.2s;border-left:3px solid transparent;text-decoration:none;letter-spacing:.1px}
+.dw-a:hover,.dw-a:focus{color:#fff;border-left-color:var(--y);background:rgba(255,255,255,.04)}
+.dw-a svg{color:var(--y);flex-shrink:0}
+.dw-div{height:1px;background:rgba(255,255,255,.07);margin:6px 0}
+.dw-sec{padding:12px 20px}
+.dw-lbl{font-family:var(--font-kz);font-size:9.5px;font-weight:800;color:rgba(255,255,255,.28);letter-spacing:.7px;text-transform:uppercase;margin-bottom:7px}
+.dw-val{font-size:13px;font-weight:700;color:rgba(255,255,255,.78);line-height:1.55}
+.dw-soc{display:flex;gap:9px;padding:10px 20px 4px}
+.soc-btn{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.07);color:rgba(255,255,255,.65);display:flex;align-items:center;justify-content:center;transition:.2s;text-decoration:none}
+.soc-btn:hover{background:var(--y);color:var(--dk);transform:scale(1.08)}
+.city-li{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.65);padding:3px 0}
+.city-dot{width:5px;height:5px;border-radius:50%;background:var(--y);flex-shrink:0}
+.dw-foot{margin-top:auto;padding:12px 20px 24px;border-top:1px solid rgba(255,255,255,.07);flex-shrink:0}
+
+/* ── HERO BANNER ─────────────────────────────────────── */
+.hero{padding:14px var(--gx) 6px;animation:fadeUp .5s ease both}
+.bwrap{
+  position:relative;border-radius:var(--rl);overflow:hidden;
+  box-shadow:0 8px 28px rgba(0,0,0,.2);
+  background:var(--bg);
+  display:block;line-height:0;width:100%;aspect-ratio:16/7;
+  isolation:isolate;transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden
+}
+.ban-vp{position:absolute;inset:0;overflow:hidden;border-radius:inherit;touch-action:none;user-select:none;-webkit-user-select:none;background:var(--bg)}
+.ban-track{display:flex;height:100%;min-height:0;transition:transform .58s cubic-bezier(.32,.72,.2,1);will-change:transform}
+.ban-track.ban-reduce{transition-duration:.12s}
+.ban-slide{flex-shrink:0;height:100%;min-width:0;position:relative;background:var(--bg)}
+.ban-slide img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;transform:scale(1.02);transform-origin:center
+}
+.bwrap>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.bwrap-sk{width:100%;aspect-ratio:16/7;border-radius:var(--rl);background:linear-gradient(90deg,rgba(0,0,0,.06) 25%,rgba(0,0,0,.13) 50%,rgba(0,0,0,.06) 75%);background-size:700px 100%;animation:shimmer 1.6s infinite}
+.ban-dots{position:absolute;right:0;left:0;bottom:22px;z-index:4;display:flex;justify-content:center;align-items:center;gap:6px;pointer-events:none}
+.ban-dots .ban-dot{pointer-events:auto;cursor:pointer;width:7px;height:7px;border-radius:50%;border:none;padding:0;background:rgba(255,255,255,.4);box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .2s,background .2s;vertical-align:middle}
+.ban-dots .ban-dot[aria-selected="true"]{background:var(--y);transform:scale(1.15)}
+.ban-badge{position:absolute;bottom:13px;left:13px;z-index:2;background:rgba(26,26,36,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--y);font-family:var(--font-kz);font-size:10px;font-weight:800;padding:7px 14px;border-radius:30px;letter-spacing:.5px;box-shadow:0 4px 14px rgba(0,0,0,.3);display:flex;align-items:center;gap:6px;line-height:1;border:1px solid rgba(255,193,7,.25)}
+
+/* — найзағай (баннер): тұмандық бұлт + жарқыл + процедуралық үшқын */
+.ltn-fx{position:absolute;inset:0;z-index:3;border-radius:inherit;overflow:hidden;pointer-events:none;isolation:isolate;
+  --flash-x:50%;--flash-x2:28%;--flash-x3:72%;--burst-x:50%;--burst-y:10%}
+.ltn-cloud{
+  position:absolute;left:-14%;right:-14%;top:-26%;height:72%;pointer-events:none;
+}
+.ltn-cloud-deep,.ltn-cloud-near{
+  position:absolute;inset:0;opacity:0;pointer-events:none;
+  transform-origin:var(--flash-x) 18%;
+  mix-blend-mode:screen;
+}
+/* Терең апельсин тұманы — жұмсақ bloom */
+.ltn-cloud-deep{
+  filter:blur(16px) saturate(1.12);
+  transform:translateZ(0);
+  background:
+    radial-gradient(ellipse 92% 78% at var(--flash-x) 30%, rgba(255,168,88,.38) 0%, rgba(255,122,42,.2) 42%, transparent 74%),
+    radial-gradient(ellipse 118% 96% at calc(var(--flash-x) + 6%) 22%, rgba(249,115,22,.16) 0%, rgba(234,88,12,.08) 48%, transparent 68%),
+    radial-gradient(ellipse 70% 56% at calc(var(--flash-x) - 18%) 48%, rgba(255,188,120,.22) 0%, transparent 62%);
+}
+/* Жақын құрылымды қабат — «бұлт шетінің» жарығы */
+.ltn-cloud-near{
+  filter:blur(2.6px) saturate(1.08);
+  background:
+    radial-gradient(ellipse 40% 56% at var(--flash-x) 32%, rgba(255,248,236,.55) 0%, rgba(255,196,132,.72) 22%, rgba(255,146,56,.48) 46%, transparent 78%),
+    radial-gradient(ellipse 34% 48% at calc(var(--flash-x) - 22%) 42%, rgba(255,234,208,.62) 0%, rgba(255,154,68,.42) 40%, rgba(249,115,22,.16) 62%, transparent 82%),
+    radial-gradient(ellipse 34% 46% at calc(var(--flash-x) + 24%) 40%, rgba(255,230,196,.58) 0%, rgba(255,138,52,.38) 42%, rgba(234,88,12,.14) 58%, transparent 80%),
+    radial-gradient(ellipse 68% 36% at var(--flash-x) 14%, rgba(255,224,188,.44) 0%, rgba(255,132,48,.26) 50%, transparent 78%);
+}
+.ltn-burst{
+  position:absolute;inset:-18%;opacity:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 98% 44% at var(--burst-x) -2%, rgba(255,242,226,.76) 0%, rgba(255,188,118,.46) 32%, rgba(255,120,48,.14) 58%, transparent 76%),
+    radial-gradient(ellipse 38% 34% at var(--burst-x) var(--burst-y), rgba(255,236,214,.44) 0%, rgba(255,148,62,.28) 34%, transparent 64%),
+    radial-gradient(ellipse 88% 64% at var(--burst-x) -14%, rgba(255,164,92,.14) 0%, transparent 56%);
+  mix-blend-mode:screen;
+}
+.ltn-flash{position:absolute;inset:0;opacity:0;pointer-events:none;background:
+  radial-gradient(ellipse 108% 36% at var(--flash-x) -2%, rgba(255,252,246,.48) 0%, rgba(255,200,148,.34) 28%, transparent 74%),
+  radial-gradient(ellipse 70% 48% at var(--flash-x) -12%, rgba(255,236,216,.42) 0%, rgba(255,158,72,.22) 24%, transparent 58%),
+  radial-gradient(ellipse 50% 36% at var(--flash-x2) 10%, rgba(255,214,168,.28) 0%, transparent 54%),
+  radial-gradient(ellipse 46% 34% at var(--flash-x3) 8%, rgba(255,190,122,.24) 0%, transparent 52%),
+  radial-gradient(ellipse 108% 72% at 50% 104%, rgba(255,132,48,.085) 0%, transparent 44%);
+  mix-blend-mode:soft-light}
+.ltn-bolt{
+  position:absolute;top:0;height:112%;width:auto;min-width:clamp(46px,12vw,112px);max-width:36%;
+  opacity:0;transform-origin:50% 0%;
+  pointer-events:none;-webkit-user-drag:none;user-select:none;
+  display:flex;align-items:flex-start;justify-content:center;
+  filter:
+    drop-shadow(0 0 1px rgba(255,255,252,.98))
+    drop-shadow(0 0 8px rgba(255,210,152,.85))
+    drop-shadow(0 0 18px rgba(255,152,64,.62))
+    drop-shadow(0 0 36px rgba(255,106,28,.42))
+    drop-shadow(0 0 56px rgba(234,88,12,.22));
+}
+.ltn-bolt svg.ltn-bolt-svg{display:block;height:100%;width:auto;max-height:none}
+.ltn-bolt--sec{
+  min-width:clamp(50px,14vw,124px);max-width:44%;opacity:0;
+  filter:
+    drop-shadow(0 0 1px rgba(255,252,246,.92))
+    drop-shadow(0 0 12px rgba(255,184,96,.58))
+    drop-shadow(0 0 30px rgba(249,115,22,.42))
+    drop-shadow(0 0 48px rgba(234,88,12,.2));
+  will-change:opacity,filter;
+}
+.ltn-fx.ltn-strike .ltn-burst{animation:ltnBurst 1.08s cubic-bezier(.2,.75,.26,1) both}
+.ltn-fx.ltn-strike .ltn-cloud-deep,
+.ltn-fx.ltn-strike .ltn-cloud-near{animation:ltnCloudLayer 1.52s cubic-bezier(.22,.62,.28,1) both}
+.ltn-fx.ltn-strike .ltn-cloud-near{animation-delay:.05s}
+.ltn-fx.ltn-strike .ltn-flash{animation:ltnFlash 1.58s cubic-bezier(.26,.42,.22,1) both}
+.ltn-fx.ltn-strike .ltn-bolt:not(.ltn-bolt--sec){animation:ltnBoltStrike 1.68s cubic-bezier(.14,.68,.26,1) .03s both}
+.ltn-fx.ltn-strike.ltn-fork .ltn-bolt--sec{animation:ltnBoltStrikeSec 1.42s cubic-bezier(.18,.62,.32,1) .09s both}
+@keyframes ltnBurst{
+  0%{opacity:0;transform:scale(.38)}
+  6%{opacity:.5;transform:scale(.92)}
+  24%{opacity:.28;transform:scale(1)}
+  100%{opacity:0;transform:scale(1.06)}
+}
+@keyframes ltnCloudLayer{
+  0%{opacity:0;transform:translateY(-14px) scale(.9)}
+  10%{opacity:.96}
+  26%{opacity:.74;transform:translateY(1px) scale(1.02)}
+  48%{opacity:.46;transform:translateY(3px) scale(1.05)}
+  74%{opacity:.18;transform:translateY(5px) scale(1.07)}
+  100%{opacity:0;transform:translateY(8px) scale(1.09)}
+}
+@keyframes ltnFlash{
+  0%{opacity:0}
+  5%{opacity:.38}
+  9%{opacity:.06}
+  14%{opacity:.34}
+  20%{opacity:.08}
+  28%{opacity:.26}
+  38%{opacity:.05}
+  48%{opacity:.2}
+  58%{opacity:.04}
+  70%{opacity:.12}
+  82%{opacity:.03}
+  94%{opacity:.06}
+  100%{opacity:0}
+}
+@keyframes ltnBoltStrike{
+  0%{opacity:0;filter:brightness(2.05) blur(5px) saturate(1.22)}
+  7%{opacity:.78;filter:brightness(1.38) blur(0) saturate(1.12)}
+  16%{opacity:.68;filter:brightness(1.22) saturate(1.08)}
+  34%{opacity:.48;filter:brightness(1.08)}
+  54%{opacity:.22;filter:brightness(1.04)}
+  74%{opacity:.08}
+  90%{opacity:.035}
+  100%{opacity:0;filter:brightness(1.02) blur(.45px)}
+}
+@keyframes ltnBoltStrikeSec{
+  0%{opacity:0;filter:brightness(1.72) blur(3.5px)}
+  12%{opacity:.94;filter:brightness(1.32) blur(0)}
+  38%{opacity:.46}
+  62%{opacity:.14}
+  80%{opacity:.035}
+  100%{opacity:0}
+}
+
+/* ── TAP: касание — апельсин плазма (вектор, фото файлсыз; ортасы басылған жерде) ─ */
+.tap-ltn-fx{
+  position:fixed;margin:0;padding:0;
+  left:0;top:0;
+  pointer-events:none;
+  z-index:2147483000;
+  transform:translate(-50%,-50%) translateZ(0);
+  -webkit-transform:translate(-50%,-50%) translateZ(0);
+  opacity:0;
+  animation:tapLtnFxPop .62s cubic-bezier(.18,.82,.22,1) forwards;
+}
+.tap-ltn-fx svg.tap-ltn-fx__svg{
+  display:block;width:min(62px,max(38px,calc(27vw - 42px)));height:auto;margin:0;overflow:visible;
+  filter:
+    drop-shadow(0 0 6px rgba(255,183,120,.88))
+    drop-shadow(0 0 14px rgba(255,138,54,.68))
+    drop-shadow(0 0 26px rgba(249,115,22,.45));
+}
+.tap-ltn-fx--logo svg.tap-ltn-fx__svg{
+  width:min(54px,max(34px,calc(23vw - 32px)));
+}
+@keyframes tapLtnFxPop{
+  0%{opacity:0;transform:translate(-50%,-50%) translateZ(0) scale(.38)}
+  15%{opacity:1;transform:translate(-50%,-50%) translateZ(0) scale(1)}
+  100%{opacity:0;transform:translate(-50%,-50%) translateZ(0) scale(1.05)}
+}
+
+/* ── SEARCH (app-style bar: one surface, no inner chrome) ─ */
+.srch{padding:12px var(--gx) 4px;animation:fadeUp .5s .07s ease both}
+.srch-row{display:flex;align-items:stretch;gap:10px;width:100%;max-width:100%}
+.sbox{
+  display:flex;align-items:center;gap:8px;flex:1;min-width:0;  min-height:50px;
+  padding:0 14px 0 12px;
+  background:#fff;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.07);
+  box-shadow:0 2px 8px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
+  transition:box-shadow .25s,border-color .25s,background .25s,transform .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.sbox:focus-within{
+  background:#fff;
+  border-color:rgba(23,24,38,.2);
+  box-shadow:0 0 0 2px rgba(23,24,38,.2),0 4px 16px rgba(0,0,0,.1);
+  transform:translateY(-0.5px);
+}
+.sico{
+  width:36px;height:36px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--y);
+  opacity:.95;pointer-events:none;
+}
+.sico svg{display:block;flex-shrink:0}
+.sbox input{
+  flex:1;min-width:0;min-height:0;height:100%;
+  margin:0;padding:12px 4px 12px 0;
+  background:transparent!important;
+  border:0!important;outline:0!important;box-shadow:none!important;
+  border-radius:0!important;
+  -webkit-appearance:none!important;appearance:none!important;
+  font-size:16px;
+  line-height:1.25;
+  color:var(--dk);
+  font-weight:600;
+  caret-color:var(--y);
+}
+.sbox input::placeholder{color:rgba(23,24,38,.4);font-weight:600}
+.sbox input::-webkit-search-decoration{-webkit-appearance:none}
+.sbox input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none;display:none;pointer-events:none}
+.sbox input:focus,.sbox input:focus-visible{outline:none!important;box-shadow:none!important}
+.fbtn{flex-shrink:0;width:50px;min-height:50px;padding:0;border-radius:999px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.07);display:flex;align-items:center;justify-content:center;position:relative;transition:.22s,box-shadow .25s,border-color .25s,transform .2s;color:var(--dk);-webkit-tap-highlight-color:transparent}
+.fbtn:hover{background:#fff;border-color:rgba(23,24,38,.16);box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.fbtn.on{border-color:rgba(23,24,38,.3);box-shadow:0 0 0 2px rgba(23,24,38,.12),0 4px 16px rgba(0,0,0,.08)}
+.fbtn-dot{position:absolute;top:8px;right:10px;width:8px;height:8px;border-radius:50%;background:var(--acc);border:2px solid #fff;opacity:0;transform:scale(0);transition:.2s}
+.fbtn.has-filt .fbtn-dot{opacity:1;transform:scale(1)}
+@media(max-width:380px){
+  :root{--sheet-pad:20px}
+  .srch-row{gap:8px}
+  .fbtn{width:46px;min-height:46px;min-width:46px}
+  .sbox{padding:0 10px 0 8px;min-height:46px}
+  .sheet,.cfm{left:10px;right:10px}
+  .cfm-acts{gap:8px;flex-wrap:wrap}
+  .cfm-cancel,.cfm-go{min-width:0;font-size:12px;min-height:50px}
+}
+
+/* ── FILTER SHEET ────────────────────────────────────── */
+.filter-hd{padding:8px var(--sheet-pad) 4px;font-family:var(--font-kz);font-size:17px;font-weight:800;color:var(--dk);letter-spacing:-.2px}
+.filter-body{padding:8px var(--sheet-pad) 20px}
+.fgrp{margin-bottom:20px}
+.flbl{font-family:var(--font-kz);font-size:10px;font-weight:800;color:var(--mut);letter-spacing:.65px;text-transform:uppercase;margin-bottom:10px}
+.fgrp-badges{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.fgrp-badges .flbl{margin-bottom:0}
+.fgrp-badges .fcheck{margin:0}
+.fselect{width:100%;box-sizing:border-box;padding:12px 14px;padding-right:36px;border-radius:14px;background:var(--cream2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231a1400' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;background-size:12px 12px;border:2px solid rgba(26,20,0,.12);font-family:var(--font-kz);font-size:14px;font-weight:700;color:var(--dk);cursor:pointer;appearance:none;-webkit-appearance:none;min-height:48px;transition:background .18s,border-color .18s,box-shadow .18s}
+.fselect:hover{background-color:#ebe4d6}
+.fselect:focus{border-color:var(--dk);background-color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);outline:none}
+.fcheck{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:14px;font-weight:700;color:var(--dk);padding:4px 2px}
+.fcheck input{width:20px;height:20px;accent-color:var(--dk);cursor:pointer;flex-shrink:0}
+.filter-foot{display:flex;gap:10px;align-items:stretch;align-content:stretch}
+.sh-foot.filter-foot .f-reset,
+.sh-foot.filter-foot .f-apply{margin-bottom:0}
+.f-reset{flex:1;min-height:50px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;padding:0 16px;border-radius:16px;background:var(--cream2);color:var(--dk);font-family:var(--font-kz);font-size:13px;font-weight:800;border:1px solid rgba(0,0,0,.08);transition:background .18s,box-shadow .18s,filter .18s}
+.f-reset:hover{background:#ebe4d6}
+.f-apply{flex:2;min-height:50px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;padding:0 16px;border-radius:16px;background:var(--dk);color:var(--y);font-family:var(--font-kz);font-size:13px;font-weight:800;border:1px solid transparent;transition:background .18s,box-shadow .18s,filter .18s;box-shadow:0 6px 20px rgba(23,24,38,.25)}
+.f-apply:hover{background:#252a3d;box-shadow:0 8px 24px rgba(23,24,38,.3)}
+.f-apply:active{filter:brightness(.96)}
+.fbtn:focus-visible,.fselect:focus-visible,.f-reset:focus-visible,.f-apply:focus-visible{outline:2px solid var(--dk);outline-offset:2px}
+
+/* ── TABS ────────────────────────────────────────────── */
+.tabs-wrap{
+  padding:8px var(--gx) 2px;animation:fadeUp .5s .11s ease both;
+  overscroll-behavior-y:none;
+}
+.tabs{
+  display:flex;border-bottom:2px solid rgba(0,0,0,.09);
+  overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;touch-action:pan-x;
+  overscroll-behavior-x:contain;overscroll-behavior-y:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;font-family:var(--font-kz);font-size:12px;font-weight:700;color:rgba(26,20,0,.4);padding:10px 16px 12px;position:relative;transition:.22s;white-space:nowrap;touch-action:pan-x}
+.tab-btn.on{color:var(--dk)}
+.tab-btn::after{content:'';position:absolute;bottom:-2px;left:8px;right:8px;height:3px;background:var(--dk);border-radius:2px 2px 0 0;transform:scaleX(0);transition:.26s cubic-bezier(.34,1.46,.64,1)}
+.tab-btn.on::after{transform:scaleX(1)}
+.tabs-sk{display:flex;gap:10px;padding-bottom:12px}
+.tab-sk{height:26px;width:80px;border-radius:30px}
+
+/* ── PRODUCT GRID ────────────────────────────────────── */
+.pgrid-wrap{padding:12px var(--gx) 20px;animation:fadeUp .5s .16s ease both}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* ── Brand clip (видео блок орнына) ─ */
+.brand-clip-sec{
+  width:100%;box-sizing:border-box;padding:28px var(--gx) 32px;max-width:min(100%,1240px);
+  margin-top:clamp(16px,4.5vw,32px);margin-left:auto;margin-right:auto;margin-bottom:0;
+  animation:fadeUp .55s .18s ease both;animation-fill-mode:both
+}
+.brand-clip-ttl{
+  font-family:var(--font-kz);font-size:clamp(17px,4.2vw,22px);font-weight:900;letter-spacing:.04em;color:#fff;
+  text-align:center;text-shadow:0 2px 22px rgba(0,0,0,.35);margin:0 0 8px;line-height:1.25;
+  padding:0 8px
+}
+.brand-clip-sub{
+  font-family:var(--font-kz);font-size:clamp(12px,3vw,14px);font-weight:700;color:rgba(255,255,255,.88);
+  text-align:center;margin:0 auto 30px;max-width:34em;line-height:1.45;padding:0 12px
+}
+.brand-clip-shell{
+  border-radius:var(--rl);overflow:hidden;
+  box-shadow:0 14px 44px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.35);
+  background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(23,24,38,.35));
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:3px;
+}
+.brand-clip-mount{min-height:0}
+.brand-clip-ratio{
+  position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:calc(var(--rl) - 4px);overflow:hidden;background:#0f1118
+}
+.brand-clip-ratio iframe,.brand-clip-ratio video{
+  position:absolute;inset:0;width:100%;height:100%;border:0;display:block;object-fit:cover;border-radius:inherit
+}
+.brand-clip-fallback{
+  border-radius:calc(var(--rl) - 4px);
+  background:linear-gradient(165deg,rgba(255,255,255,.97) 0%,rgba(253,248,238,.98) 45%,rgba(255,235,210,.95) 100%);
+  border:1px solid rgba(0,0,0,.08);
+  min-height:clamp(160px,42vw,280px);display:flex;align-items:center;justify-content:center;padding:28px 22px;text-align:center
+}
+.brand-clip-fb-inner{max-width:22rem;display:flex;flex-direction:column;align-items:center;gap:12px}
+.brand-clip-play-ic{
+  width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,var(--dk),#2d3147);color:var(--y);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 0 3px rgba(255,83,0,.35)
+}
+.brand-clip-play-ic svg{width:22px;height:22px;margin-left:3px;display:block}
+.brand-clip-fb-inner strong{font-family:var(--font-kz);font-size:15px;font-weight:900;color:var(--dk);letter-spacing:.02em;line-height:1.35}
+.brand-clip-fb-inner p{font-size:13px;font-weight:600;color:#624f2d;line-height:1.45;margin:0}
+.brand-clip-insta{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;
+  padding:12px 22px;border-radius:999px;background:var(--dk);color:var(--y)!important;font-family:var(--font-kz);
+  font-size:13px;font-weight:900;text-decoration:none;box-shadow:0 8px 22px rgba(23,24,38,.35);transition:transform .18s,filter .18s
+}
+.brand-clip-insta:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.brand-clip-insta:active{transform:scale(.97)}
+.pcard{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);cursor:pointer;position:relative;transition:transform .22s,box-shadow .22s;animation:pop .36s ease both;display:flex;flex-direction:column}
+.pcard:hover{transform:translateY(-5px);box-shadow:var(--shl)}
+.pcard:active{transform:scale(.96)}
+.pc-img{width:100%;aspect-ratio:1/1;background:linear-gradient(145deg,#f5e8c0,#ffe89e);flex-shrink:0;position:relative;overflow:hidden}
+.pc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pcard:hover .pc-img img{transform:scale(1.06)}
+.pc-noimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(160,130,60,.25)}
+.pc-img-corner{position:absolute;top:10px;left:10px;z-index:3;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 8px;max-width:calc(100% - 52px);pointer-events:none}
+.pc-tag,.pc-badge{
+  font-family:var(--font-kz);
+  font-size:9px;
+  font-weight:800;
+  padding:6px 12px;
+  border-radius:999px;
+  letter-spacing:.28px;
+  line-height:1;
+  white-space:nowrap;
+  flex-shrink:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:26px;
+  border-width:1px;
+  border-style:solid;
+  box-sizing:border-box;
+}
+.pc-tag{
+  background:rgba(255,252,246,.94);
+  color:#5c4510;
+  border-color:rgba(212,165,116,.38);
+  box-shadow:0 2px 10px rgba(0,0,0,.1)
+}
+.pc-badge{
+  position:relative;top:auto;left:auto;
+  background:var(--acc);
+  color:#fff;
+  border-color:rgba(255,255,255,.3);
+  box-shadow:0 2px 10px rgba(0,0,0,.14)
+}
+.pc-add{position:absolute;bottom:10px;right:10px;width:32px;height:32px;border-radius:50%;background:var(--dk);color:var(--y);display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 3px 10px rgba(0,0,0,.3);transition:.22s}
+.pc-add:hover{background:var(--y);color:var(--dk);transform:scale(1.12) rotate(90deg)}
+.pc-add:active{transform:scale(.92)}
+.pc-qty{position:absolute;bottom:10px;right:10px;display:flex;align-items:center;gap:6px;z-index:2;background:rgba(23,24,38,.95);border-radius:999px;padding:4px 6px;box-shadow:0 6px 16px rgba(0,0,0,.28)}
+.pc-qbtn{width:26px;height:26px;border-radius:50%;background:var(--dk);color:var(--y);display:flex;align-items:center;justify-content:center;transition:.16s}
+.pc-qbtn:hover{background:#2d3145;transform:scale(1.06)}
+.pc-qbtn:active{transform:scale(.95)}
+.pc-qv{min-width:20px;text-align:center;font-family:var(--font-kz);font-size:11px;font-weight:800;color:#fff}
+.pc-body{padding:10px 12px 14px;flex:1;display:flex;flex-direction:column;gap:6px}
+.pc-name{font-family:var(--font-kz);font-size:12px;font-weight:800;line-height:1.35;color:var(--dk)}
+.pc-desc{font-size:11.5px;line-height:1.45;color:#624f2d;display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:32px}
+.pc-bottom{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:auto;padding-top:2px}
+.pc-prices{display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:0}
+.pc-price-old{font-family:var(--font-kz);font-size:10.5px;font-weight:800;color:#8a7a65;text-decoration:line-through;letter-spacing:0;opacity:.95;line-height:1.1}
+.pc-price-now,.pc-price{font-family:var(--font-kz);font-size:14px;font-weight:900;color:#5c3317;letter-spacing:.1px}
+.pc-sk{aspect-ratio:1/1;border-radius:var(--r);height:auto}
+.empty{grid-column:1/-1;text-align:center;padding:56px 20px;font-family:var(--font-kz);font-size:12px;color:rgba(26,20,0,.25);display:flex;flex-direction:column;align-items:center;gap:12px}
+.empty svg{opacity:.2}
+
+/* ── SHARED SHEET ────────────────────────────────────── */
+.sheet{position:fixed;bottom:0;left:var(--popup-edge);right:var(--popup-edge);background:#fff;border-radius:28px 28px 0 0;z-index:500;transform:translateY(105%);transition:transform .42s cubic-bezier(.34,1.46,.64,1);display:flex;flex-direction:column;max-height:92svh;min-height:0;overflow:hidden;box-shadow:0 -6px 28px rgba(23,24,38,.12);border:1px solid rgba(0,0,0,.05);border-bottom:none;will-change:transform}
+.sheet.on{transform:translateY(0)}
+@media(max-width:899px){
+  /* 1 line cart: short sheet until user drags up (cartSh--mid ≈ half screen) */
+  .sheet#cartSh{transition:transform .42s cubic-bezier(.34,1.46,.64,1),min-height .32s ease}
+  .sheet#cartSh.on.cartSh--one:not(.cartSh--mid){
+    min-height:0;max-height:92svh
+  }
+  .sheet#cartSh.on.cartSh--one.cartSh--mid{
+    min-height:50svh;min-height:min(50dvh,50svh)
+  }
+}
+.sheet.sheet--dragging{transition:none!important;overflow:visible}
+.cfm.sheet--dragging{overflow:visible}
+.sh-drag{flex-shrink:0;padding:12px 16px 8px;display:flex;justify-content:center;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
+.sh-drag::before{content:'';display:block;width:40px;height:5px;background:rgba(23,24,38,.12);border-radius:4px}
+.sh-drag:active{cursor:grabbing}
+.sh-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.sh-foot{flex-shrink:0;padding:16px var(--popup-inner) calc(env(safe-area-inset-bottom,0px) + var(--popup-bottom-space));border-top:1px solid rgba(0,0,0,.08);background:var(--cream);box-shadow:0 -4px 24px rgba(23,24,38,.06)}
+.sh-foot .pp-add-btn,
+.sh-foot .pp-qty,
+.sh-foot .order-btn,
+.sh-foot .f-reset,
+.sh-foot .f-apply{margin-bottom:10px}
+.sh-foot button{margin-bottom:10px}
+.sh-foot > :last-child{margin-bottom:0}
+.sh-close-abs{position:absolute;top:max(12px,env(safe-area-inset-top));right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--dk);display:flex;align-items:center;justify-content:center;transition:.2s;z-index:6;box-shadow:0 2px 12px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.06)}
+.sh-close-abs:hover{background:#fff;transform:scale(1.05)}
+.cart-close-btn:focus-visible,.sh-close-abs:focus-visible,.pp-qb:focus-visible,.pp-add-btn:focus-visible,.order-btn:focus-visible,.cfm-cancel:focus-visible,.cfm-go:focus-visible{outline:2px solid var(--dk);outline-offset:2px}
+
+/* ── PRODUCT SHEET ───────────────────────────────────── */
+.pp-img{width:100%;height:min(42svh,280px);min-height:220px;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
+.pp-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pp-img .noimg{position:relative;z-index:1;color:rgba(160,130,60,.25)}
+.pp-cnt{padding:20px var(--popup-inner) 16px}
+.pp-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.pp-name{font-family:var(--font-kz);font-size:19px;font-weight:800;flex:1;min-width:0;line-height:1.22;letter-spacing:-.2px;color:var(--dk)}
+.pp-ptag{background:var(--dk);color:var(--y);font-family:var(--font-kz);font-size:13px;font-weight:900;padding:9px 15px;border-radius:16px;flex-shrink:0;white-space:nowrap;box-shadow:0 4px 14px rgba(23,24,38,.22);align-self:flex-start;margin-top:2px}
+.pp-ptag-sale{white-space:normal;text-align:right;line-height:1.15;padding:7px 13px;min-width:5.2rem}
+.pp-ptag-old{display:block;font-size:10.5px;font-weight:800;text-decoration:line-through;opacity:.72;color:#ffc9a0;margin-bottom:1px;letter-spacing:0}
+.pp-ptag-sale>span:last-child{white-space:nowrap}
+.pp-desc{font-size:14px;font-weight:600;color:#4a4555;line-height:1.65;margin-bottom:18px;padding:14px 16px;background:var(--cream);border-radius:14px;border-left:4px solid var(--y);box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.pp-tag-band{display:none;margin:-4px 0 14px}
+.pp-tag-band.on{display:block}
+.pp-product-tag{display:inline-block;font-family:var(--font-kz);font-size:11px;font-weight:800;padding:6px 12px;border-radius:999px;background:rgba(255,193,7,.14);border:1.5px solid rgba(255,193,7,.42);color:#5c4510;letter-spacing:.2px;line-height:1.2}
+.pp-sec{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.pp-sec-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(0,0,0,.08),transparent)}
+.pp-itl{font-family:var(--font-kz);font-size:10px;font-weight:800;color:#8a7348;letter-spacing:.75px;text-transform:uppercase;white-space:nowrap}
+.pp-chips{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:14px}
+.chip{background:rgba(255,193,7,.14);border:1.5px solid rgba(255,193,7,.4);color:#5c4510;font-size:12px;font-weight:700;padding:6px 13px;border-radius:22px;display:inline-flex;align-items:center;gap:6px;transition:.18s}
+.chip:hover{background:rgba(255,193,7,.22);transform:translateY(-1px)}
+.chip::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--y);flex-shrink:0}
+.pp-add-btn{width:100%;padding:16px 18px;min-height:52px;background:var(--dk);color:var(--y);border-radius:18px;font-family:var(--font-kz);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 24px rgba(23,24,38,.3);transition:.2s;letter-spacing:.2px;margin-bottom:0}
+.pp-add-btn:hover{background:#252a3d;transform:translateY(-2px);box-shadow:0 12px 28px rgba(23,24,38,.35)}
+.pp-add-btn:active{transform:scale(.98)}
+.pp-qty{display:none;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;background:var(--cream2);border-radius:18px;border:1px solid rgba(0,0,0,.07);margin-bottom:0}
+.pp-qty.on{display:flex}
+.pp-qty-lbl{font-size:13px;font-weight:700;color:#5c4a2e}
+.pp-qty-ctrl{display:flex;align-items:center;gap:10px}
+.pp-qb{width:40px;height:40px;border-radius:50%;background:var(--dk);color:var(--y);display:flex;align-items:center;justify-content:center;transition:.18s}
+.pp-qb:hover{background:#2d3145}
+.pp-qv{min-width:32px;text-align:center;font-family:var(--font-kz);font-size:16px;font-weight:800}
+
+/* ── CART SHEET ──────────────────────────────────────── */
+.cart-hd{display:flex;align-items:flex-start;justify-content:space-between;padding:10px var(--popup-inner) 14px;border-bottom:1px solid rgba(0,0,0,.08);flex-shrink:0;background:linear-gradient(180deg,rgba(255,255,255,.5) 0%,transparent 100%)}
+.cart-ttl{font-family:var(--font-kz);font-size:17px;font-weight:800;letter-spacing:-.15px;color:var(--dk)}
+.cart-sub{font-size:13px;color:var(--mut);font-weight:700;margin-top:6px}
+.cart-close-btn{width:40px;height:40px;border-radius:50%;background:var(--cream2);color:var(--dk);display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0;border:1px solid rgba(0,0,0,.06)}
+.cart-close-btn:hover{background:#ebe4d6;transform:scale(1.04)}
+.ci{display:flex;align-items:center;gap:12px;padding:16px var(--popup-inner);border-bottom:1px solid rgba(0,0,0,.06);animation:fadeIn .25s ease both}
+.ci:last-of-type{border-bottom:none}
+.ci-img{width:52px;height:52px;border-radius:12px;background:linear-gradient(145deg,#fff0e8,#ffd2bf);flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.ci-img img{width:100%;height:100%;object-fit:cover}
+.ci-img svg{color:rgba(160,130,60,.28)}
+.ci-inf{flex:1;min-width:0}
+.ci-name{font-family:var(--font-kz);font-size:12.5px;font-weight:700;line-height:1.35;color:var(--dk);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;margin-bottom:4px}
+.ci-p{font-size:13px;font-weight:800;color:#6b4010;margin-top:4px;font-family:var(--font-kz);letter-spacing:.02em}
+.ci-ctrl{display:flex;align-items:center;gap:2px;flex-shrink:0}
+.qb{width:32px;height:32px;border-radius:50%;background:var(--dk);color:var(--y);display:flex;align-items:center;justify-content:center;transition:.16s}
+.qb:hover{background:#2d3145;transform:scale(1.06)}
+.qv{width:34px;text-align:center;font-family:var(--font-kz);font-size:14px;font-weight:800}
+.del-btn{width:32px;height:32px;border-radius:50%;background:#fff0f0;color:var(--acc);display:flex;align-items:center;justify-content:center;transition:.16s;margin-left:6px;border:1px solid rgba(229,57,53,.2)}
+.del-btn:hover{background:var(--acc);color:#fff;border-color:transparent}
+.cart-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:64px 24px;color:rgba(26,20,0,.32)}
+.cart-empty svg{opacity:.25}
+.cart-empty-txt{font-family:var(--font-kz);font-size:13px;font-weight:700}
+.tot-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;padding-top:4px}
+.tot-lbl{font-family:var(--font-kz);font-size:13px;font-weight:800;color:var(--mut);text-transform:uppercase;letter-spacing:.4px}
+.tot-price{font-family:var(--font-kz);font-size:22px;font-weight:900;color:var(--dk);letter-spacing:-.4px}
+.order-btn{width:100%;padding:16px 18px;min-height:54px;background:var(--grn);color:#fff;border-radius:18px;font-family:var(--font-kz);font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 24px rgba(37,211,102,.35);transition:.2s;margin-bottom:0}
+.order-btn:hover{background:#20c45b;transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,.4)}
+.order-btn:active{transform:scale(.98)}
+.order-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* ── CONFIRM MODAL ───────────────────────────────────── */
+#cfmBg{position:fixed;inset:0;background:rgba(6,4,0,.58);z-index:620;opacity:0;pointer-events:none;transition:opacity .28s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#cfmBg.on{opacity:1;pointer-events:all}
+.cfm{position:fixed;bottom:0;left:var(--popup-edge);right:var(--popup-edge);z-index:630;display:flex;flex-direction:column;min-height:0;background:#fff;border-radius:28px 28px 0 0;padding:0;transform:translateY(105%);opacity:0;pointer-events:none;transition:transform .38s cubic-bezier(.34,1.46,.64,1),opacity .28s;max-height:85svh;overflow:hidden;box-shadow:0 -8px 30px rgba(23,24,38,.14);border:1px solid rgba(0,0,0,.05);border-bottom:none;will-change:transform}
+.cfm .sh-body{flex:1;min-height:0;padding:0 var(--popup-inner) calc(env(safe-area-inset-bottom,0px) + 22px + var(--popup-bottom-space))}
+.cfm.on{transform:translateY(0);opacity:1;pointer-events:all}
+.cfm-ttl{font-family:var(--font-kz);font-size:18px;font-weight:800;margin-bottom:20px;letter-spacing:-.15px;line-height:1.25;color:var(--dk);padding:0 10px 0 6px;overflow-wrap:anywhere}
+.cfm-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:14px 6px 16px;border-bottom:1px solid rgba(0,0,0,.07);font-size:14px}
+.cfm-rname{font-weight:700;flex:1;min-width:0;color:var(--dk);line-height:1.4}
+.cfm-rprice{font-family:var(--font-kz);font-weight:800;font-size:14px;color:#6b4010;white-space:nowrap}
+.cfm-tot{display:flex;justify-content:space-between;align-items:center;margin:18px 6px 14px;padding:16px 18px;background:var(--cream);border-radius:16px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.cfm-tot-lbl{font-family:var(--font-kz);font-size:13px;font-weight:800;color:var(--mut);text-transform:uppercase;letter-spacing:.35px}
+.cfm-tot-price{font-family:var(--font-kz);font-size:22px;font-weight:900;color:var(--dk);letter-spacing:-.4px}
+.cfm-q{font-size:14px;font-weight:600;color:#7a6e52;margin:4px 0 20px;line-height:1.65;padding:0 8px}
+.cfm-acts{
+  display:flex;flex-direction:row;align-items:stretch;justify-content:stretch;gap:10px;flex-wrap:nowrap;
+  padding:0 6px 16px;box-sizing:border-box;width:100%
+}
+.cfm-acts button{box-sizing:border-box;margin:0;min-height:52px;align-self:stretch}
+.cfm-cancel{
+  flex:1 1 0;min-width:0;padding:0 14px;border-radius:16px;background:var(--cream2);color:var(--dk);
+  font-family:var(--font-kz);font-size:13px;font-weight:800;transition:background .18s,border-color .18s,box-shadow .18s,transform .12s;
+  border:1px solid rgba(0,0,0,.08);
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.2
+}
+.cfm-cancel:hover{background:#ebe4d6}
+.cfm-go{
+  flex:1.25 1 0;min-width:0;padding:0 12px;border-radius:16px;background:var(--grn);color:#fff;
+  font-family:var(--font-kz);font-size:13px;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;flex-wrap:nowrap;
+  box-shadow:0 6px 18px rgba(37,211,102,.3);border:none;line-height:1.2;transition:background .18s,box-shadow .18s,transform .12s
+}
+.cfm-go svg{flex-shrink:0;width:15px;height:15px}
+#cfmGoTxt{min-width:0;text-align:center;line-height:1.15}
+@media (max-width:400px){
+  .cfm-go{font-size:12px;gap:5px;padding:0 8px}
+  .cfm-go svg{width:14px;height:14px;flex-shrink:0}
+}
+.cfm-go:hover{background:#20c45b;box-shadow:0 8px 22px rgba(37,211,102,.4);transform:none}
+.cfm-go:active{transform:scale(.985)}
+
+/* ── FAB STACK ───────────────────────────────────────── */
+.fab-stack{position:fixed;right:14px;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:400;display:flex;flex-direction:column;gap:10px;align-items:flex-end;animation:slideInR .6s .25s ease both;transition:opacity .28s,transform .3s}
+.fab-stack.raised{transform:translateY(-84px)}
+.cart-fab{position:relative;width:52px;height:52px;border-radius:50%;background:var(--dk);color:var(--y);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,.32);cursor:pointer;transition:transform .18s}
+.cart-fab:hover{transform:scale(1.08)}
+.cart-fab:active{transform:scale(.92)}
+.cart-bdg{position:absolute;top:-5px;right:-5px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--acc);color:#fff;font-size:9.5px;font-weight:800;font-family:var(--font-kz);display:none;align-items:center;justify-content:center;border:2px solid var(--bg);z-index:1}
+.cart-bdg.on{display:flex;animation:badgePop .3s ease}
+/* .cart-fab display:flex [hidden] үстінен шығып кетпесін — тек корзинада тауар болғанда көрінеді */
+#cartFabBtn[hidden],#cartFabBtn[hidden] svg,#cartFabBtn[hidden] .cart-bdg{display:none!important;pointer-events:none;visibility:hidden}
+
+.skiplink{
+  position:absolute;left:-9999px;z-index:10050;padding:10px 18px;
+  font-family:var(--font-kz);font-size:12px;font-weight:800;
+  background:var(--dk);color:var(--y);border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.35);
+  text-decoration:none;transition:transform .2s,box-shadow .2s
+}
+.skiplink:focus{left:max(12px,env(safe-area-inset-left));top:12px;outline:2px solid var(--y);outline-offset:2px}
+.scroll-top{
+  display:none;align-items:center;justify-content:center;
+  position:fixed;z-index:405;
+  left:max(16px,env(safe-area-inset-left));
+  bottom:calc(env(safe-area-inset-bottom,0px) + 88px);
+  width:50px;height:50px;border-radius:50%;
+  background:var(--dk);color:var(--y);border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 8px 24px rgba(0,0,0,.3);cursor:pointer;
+  opacity:0;pointer-events:none;transform:translateY(6px);
+  transition:opacity .3s,transform .3s,background .2s
+}
+.scroll-top.on{opacity:1;pointer-events:all;transform:translateY(0)}
+.scroll-top:hover{background:#252a3d;transform:translateY(-1px) scale(1.04)}
+
+/* ── FOOTER (FULL) ───────────────────────────────────── */
+footer{
+  display:block;position:relative;width:100%;box-sizing:border-box;overflow:clip;
+  background:radial-gradient(120% 180% at 0% 0%,#252a3d 0%,#171826 52%,#11131e 100%);
+  padding:36px var(--gx) calc(env(safe-area-inset-bottom,0px) + 28px);
+  margin-top:24px;
+  border-top:1px solid rgba(255,255,255,.1);
+  box-shadow:0 -8px 32px rgba(0,0,0,.12)
+}
+footer::before{
+  content:'';position:absolute;left:0;right:0;top:0;height:2px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,83,0,.3) 15%, var(--y) 50%, rgba(255,83,0,.3) 85%, transparent);
+  box-shadow:0 0 20px rgba(255,83,0,.2)
+}
+.ft-inner{
+  width:100%;max-width:min(100%,1240px);margin-left:auto;margin-right:auto;box-sizing:border-box;
+  padding:0;display:flex;flex-direction:column;gap:20px;position:relative;z-index:1
+}
+.ft-ribbon{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 12px;
+  padding:4px 0 12px
+}
+.ft-pill{
+  display:inline-flex;align-items:center;gap:8px;max-width:100%;
+  padding:9px 16px 9px 12px;border-radius:999px;
+  font-size:12px;font-weight:700;letter-spacing:.15px;
+  color:rgba(255,255,255,.85);
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 1px 0 rgba(255,255,255,.04) inset
+}
+.ft-pill-ic{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;
+  background:var(--y);box-shadow:0 0 0 3px rgba(255,83,0,.18)
+}
+.ft-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+.ft-col{
+  display:flex;flex-direction:column;min-height:0;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;
+  padding:18px 16px;box-shadow:0 1px 0 rgba(255,255,255,.04) inset;
+  transition:box-shadow .24s,border-color .24s,transform .24s
+}
+.ft-ttl{
+  font-family:var(--font-kz);font-size:11px;font-weight:800;letter-spacing:.55px;text-transform:uppercase;
+  color:rgba(255,255,255,.85);margin:0 0 12px;
+  padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1)
+}
+.ft-brand-row{display:flex;align-items:center;gap:10px;margin:0 0 10px;min-width:0}
+.ft-brand-ico{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:visible;border-radius:12px}
+.ft-brand-ico img{width:100%;height:100%;object-fit:contain;display:block}
+.ft-brand{
+  font-family:var(--font-kz);font-size:22px;font-weight:900;letter-spacing:.5px;
+  line-height:1.15;margin:0
+}
+.ft-about{flex:1;font-size:13px;line-height:1.65;color:rgba(255,255,255,.7);max-width:34em}
+.ft-list{display:flex;flex-direction:column;gap:10px;flex:1}
+.ft-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.55;color:rgba(255,255,255,.8)}
+.ft-item b{font-weight:800;color:#fff;min-width:3.2em;flex-shrink:0}
+.ft-link,.ft-phone,.ft-mail,.ft-nav a,.ft-social a{font-size:13px;font-weight:700;color:rgba(255,255,255,.88);text-decoration:none;transition:color .2s,opacity .2s}
+.ft-link:hover,.ft-phone:hover,.ft-mail:hover,.ft-nav a:hover,.ft-social a:hover{color:var(--y)}
+.ft-nav{
+  display:flex;flex-direction:column;gap:0;flex:1;align-items:stretch
+}
+.ft-nav a{
+  display:block;padding:9px 0 9px 2px;font-size:13px;font-weight:600;
+  line-height:1.35;border-bottom:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.86)
+}
+.ft-nav a:last-of-type{border-bottom:none}
+.ft-nav a:hover{padding-left:6px}
+.ft-ttl-sec{margin-top:18px;padding-top:4px}
+.ft-social{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08)}
+.ft-social a{display:inline-flex;align-items:center;gap:6px}
+.ft-gallery{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;flex:1;min-height:0;align-content:start
+}
+.ft-gal-item{position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);display:block;transition:transform .2s,box-shadow .2s,opacity .2s}
+.ft-gal-item:hover{box-shadow:0 4px 16px rgba(0,0,0,.3);transform:translateY(-1px)}
+.ft-gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .28s ease}
+.ft-gal-item:hover img{transform:scale(1.05)}
+.ft-gal-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#2a3043,#1a1f31);color:rgba(255,255,255,.4);font-family:var(--font-kz);font-size:10.5px;font-weight:800;letter-spacing:.35px}
+.ft-bottom{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  padding-top:12px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap;margin:0
+}
+.ft-credit{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  text-align:center;font-size:12px;color:rgba(255,255,255,.52);line-height:1.55;max-width:52em;margin:0 auto
+}
+.ft-credit-made,.ft-credit-rights{margin:0}
+.ft-credit-made{color:rgba(255,255,255,.65);font-size:12.5px}
+.ft-cred-link{color:rgba(255,255,255,.88);text-decoration:none;font-weight:800;border-bottom:1px solid rgba(255,255,255,.2);transition:color .2s,border-color .2s}
+.ft-cred-link:hover{color:var(--y);border-color:var(--y)}
+.ft-credit-rights{font-size:12px;color:rgba(255,255,255,.45);letter-spacing:.02em;user-select:none;-webkit-user-select:none;cursor:default}
+.ft-credit a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:800}
+.ft-credit a:hover{color:var(--y)}
+@media(min-width:640px){
+  .ft-bottom{justify-content:space-between}
+  .ft-credit{text-align:left;margin:0}
+}
+@media(max-width:420px){
+  .ft-brand{font-size:20px}
+  .ft-nav a{font-size:12.5px;padding:8px 0}
+}
+
+/* ── TOAST ───────────────────────────────────────────── */
+#toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--dk);color:var(--y);font-family:var(--font-kz);font-size:11px;font-weight:800;padding:11px 18px;border-radius:22px;box-shadow:0 6px 20px rgba(0,0,0,.28);opacity:0;transition:all .28s;z-index:900;pointer-events:none;max-width:min(92vw,320px);white-space:normal;text-align:center;line-height:1.38;letter-spacing:.25px}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── TABLET (640-899px) ──────────────────────────────── */
+@media(min-width:640px) and (max-width:899px){
+  :root{--gx:22px;--sheet-pad:32px;--popup-edge:14px;--popup-inner:26px;--popup-bottom-space:20px}
+  .hero{padding-top:20px}
+  .srch{padding-top:14px}
+  .tabs-wrap{padding-top:10px}
+  .pgrid-wrap{padding-bottom:40px}
+  .pgrid{grid-template-columns:repeat(3,1fr);gap:16px}
+  .pc-name{font-size:12px}
+  .pc-desc{font-size:12px}
+  .pc-price-now,.pc-price{font-size:15px}
+  .pc-price-old{font-size:11px}
+  .srch-row{max-width:560px;margin:0 auto}
+  .ft-grid{grid-template-columns:1fr 1fr}
+  .fab-stack{right:18px;bottom:calc(env(safe-area-inset-bottom,0px) + 18px)}
+}
+
+/* ── DESKTOP (900px+) ────────────────────────────────── */
+@media(min-width:900px){
+  :root{--gx:32px;--sheet-pad:32px;--popup-edge:16px;--popup-inner:32px;--popup-bottom-space:18px}
+  body{background:#FF5300}
+  .nb{padding:0 32px;height:70px;max-width:none}
+  .nb-brand{font-size:16px}
+  .brand-ico{width:44px;height:44px}
+  .hero,.srch,.tabs-wrap,.pgrid-wrap,.brand-clip-sec{max-width:1240px;margin-left:auto;margin-right:auto}
+  footer{
+    padding:min(64px,7vw) 0 calc(env(safe-area-inset-bottom,0px) + 24px);
+    margin-top:36px
+  }
+  footer .ft-inner{max-width:1240px;padding:0 32px;gap:14px}
+  .ft-grid{
+    grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,0.9fr) minmax(0,1.15fr);
+    gap:20px;align-items:stretch
+  }
+  .ft-col{padding:20px 22px;border-radius:18px;min-width:0;height:100%;justify-content:flex-start}
+  .ft-col:hover{
+    border-color:rgba(255,255,255,.16);
+    box-shadow:0 14px 40px rgba(0,0,0,.2),0 0 0 1px rgba(255,255,255,.04) inset;
+    transform:translateY(-1px)
+  }
+  .ft-ribbon{justify-content:space-between;gap:12px;max-width:100%}
+  .ft-pill{flex:1;min-width:0;justify-content:center}
+  .scroll-top{display:flex}
+  .ft-brand{font-size:24px}
+  .ft-ttl{margin-bottom:14px;padding-bottom:10px}
+  .ft-about{font-size:13.5px}
+  .ft-bottom{padding-top:10px;justify-content:center}
+  .ft-credit{text-align:center;margin:0 auto;max-width:56em}
+  .ft-gallery{gap:10px}
+  .hero{padding:22px var(--gx) 8px}
+  .bwrap{border-radius:26px;box-shadow:0 12px 40px rgba(0,0,0,.2)}
+  .ban-badge{font-size:12px;padding:8px 16px;bottom:18px;left:18px}
+  .srch{padding:18px var(--gx) 8px}
+  .srch-row{
+    max-width:none;width:100%;margin:0;
+    justify-content:space-between;align-items:stretch;gap:14px
+  }
+  .sbox{flex:1 1 auto;min-width:0;max-width:none;padding:0 18px 0 14px;min-height:52px}
+  .sbox input{font-size:15px;padding-top:14px;padding-bottom:14px}
+  .sico{width:40px;height:40px}
+  .fbtn{flex-shrink:0;width:52px;min-height:52px}
+  .tabs-wrap{padding:12px var(--gx) 4px}
+  .tab-btn{font-size:12.5px;padding:11px 22px 13px}
+  .pgrid-wrap{padding:16px var(--gx) 24px}
+  .brand-clip-sec{padding:40px var(--gx) 40px}
+  .brand-clip-sub{margin-bottom:42px}
+  .brand-clip-shell{border-radius:26px;padding:4px}
+  .pgrid{grid-template-columns:repeat(4,1fr);gap:18px}
+  .pcard{border-radius:20px}
+  .pc-body{padding:12px 16px 15px}
+  .pc-name{font-size:13px}
+  .pc-desc{font-size:11.5px;min-height:34px}
+  .pc-price-now,.pc-price{font-size:15px}
+  .pc-price-old{font-size:11px}
+  .pc-add{width:34px;height:34px}
+  .pc-qbtn{width:28px;height:28px}
+  .pc-qv{font-size:12px}
+  .fab-stack{right:26px;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);gap:12px}
+  .fab-stack.raised{transform:translateY(-96px)}
+  .cart-fab{width:56px;height:56px}
+  .sheet{
+    top:50%;left:50%;right:auto;bottom:auto;
+    width:min(720px,calc(100vw - 48px));max-width:720px;max-height:min(90svh,880px);
+    margin:0;
+    border-radius:24px;
+    border:1px solid rgba(0,0,0,.1);
+    border-bottom:1px solid rgba(0,0,0,.08);
+    box-shadow:0 28px 80px rgba(23,24,38,.2),0 0 0 1px rgba(0,0,0,.04);
+    transform:translate(-50%,-50%) scale(.97);
+    opacity:0;pointer-events:none;
+    transition:transform .4s cubic-bezier(.34,1.46,.64,1),opacity .25s,box-shadow .3s
+  }
+  .sheet.on{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:all}
+  .sh-drag{display:none!important}
+  #filterSh{max-width:480px;width:min(480px,calc(100vw - 48px))}
+  #cartSh{max-width:520px;width:min(520px,calc(100vw - 48px))}
+  #filterSh .filter-hd,#cartSh .cart-hd{padding-top:20px}
+  /* Тауар попабы (desktop): суретті кесіп/сығыңқы етпей, шынайы қатынаста көрсету */
+  .sheet#prodSh .pp-img{
+    height:auto;
+    min-height:200px;
+    padding:18px 28px 12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .sheet#prodSh .pp-img img{
+    position:relative;
+    inset:auto;
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:min(52vh,460px);
+    object-fit:contain;
+    object-position:center center;
+    flex-shrink:0;
+    display:block;
+  }
+  .cfm{
+    top:50%;left:50%;right:auto;bottom:auto;
+    width:min(520px,calc(100vw - 40px));max-width:520px;max-height:min(80svh,700px);
+    margin:0;
+    display:flex;flex-direction:column;min-height:0;overflow:hidden;
+    border-radius:24px;
+    border:1px solid rgba(0,0,0,.1);
+    border-bottom:1px solid rgba(0,0,0,.1);
+    box-shadow:0 28px 80px rgba(23,24,38,.2);
+    padding:0;
+    transform:translate(-50%,-50%) scale(.97);
+    opacity:0;pointer-events:none;
+    transition:transform .4s cubic-bezier(.34,1.46,.64,1),opacity .25s
+  }
+  .cfm .sh-body{overflow-y:auto;max-height:min(80svh,700px);padding:20px 28px; padding-bottom:max(22px,calc(env(safe-area-inset-bottom,0px) + 12px))}
+  .cfm.on{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:all}
+  .sh-close-abs{top:16px;right:16px}
+  .pp-name{font-size:21px}
+  .cart-ttl{font-size:18px}
+  .cart-hd{padding:10px 36px 16px}
+  .ci{padding:18px 36px}
+  .sh-foot{padding-left:36px;padding-right:36px}
+  .filter-hd{padding-left:36px;padding-right:36px}
+  .filter-body{padding-left:36px;padding-right:36px}
+  .cfm-ttl{font-size:20px;padding-left:10px;padding-right:12px}
+  .cfm-row{padding:15px 10px}
+  .cfm-tot{margin-left:10px;margin-right:10px}
+  .cfm-q{padding:2px 12px}
+  .cfm-acts{padding:2px 10px 12px;flex-wrap:nowrap}
+  .cfm-cancel,.cfm-go{min-height:54px;font-size:14px}
+  .ft-link,.ft-phone,.ft-mail,.ft-quick a,.ft-social a{font-size:13px}
+  .ft-credit{font-size:12px}
+}
+
+/* ── LARGE (1200px+) ─────────────────────────────────── */
+@media(min-width:1200px){
+  .hero,.srch,.tabs-wrap,.pgrid-wrap,.brand-clip-sec{max-width:1320px}
+  footer .ft-inner{max-width:1320px}
+  .ft-grid{gap:24px}
+  .pgrid{grid-template-columns:repeat(5,1fr);gap:20px}
+}
+
+/* ── ULTRA-WIDE (1600px+) ────────────────────────────── */
+@media(min-width:1600px){
+  .hero,.srch,.tabs-wrap,.pgrid-wrap,.brand-clip-sec{max-width:1440px}
+  footer .ft-inner{max-width:1440px}
+  .pgrid{gap:24px}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet,.cfm,.scroll-top,.ft-col{transition-duration:.01ms!important}
+  .ltn-fx{display:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skiplink" id="skipLink" href="#menu-anchor">Мәзір</a>
+
+<!-- OVERLAY -->
+<div id="ovl"></div>
+<div id="cfmBg"></div>
+<div id="modalDragFill" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<nav class="nb">
+  <div class="nb-logo">
+    <span class="brand-ico" id="nbLogo">
+      <picture>
+        <source srcset="logo.svg" type="image/svg+xml"/>
+        <img src="logo.png" alt="TokBurger" width="120" height="172" decoding="async"/>
+      </picture>
+    </span>
+    <span class="nb-brand brand-text-ltn">TOKBURGER</span>
+  </div>
+  <div class="nb-right">
+    <button type="button" class="lang-btn" id="langBtn" aria-label="Тілді ауыстыру">
+      <svg class="lang-ic" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false">
+        <rect width="24" height="16" rx="1.2" fill="#00AFCC"/>
+        <circle cx="9.2" cy="8" r="2.3" fill="#FEC50C"/>
+      </svg>
+      <span class="lang-txt">ҚАЗ</span>
+    </button>
+    <button class="hbtn" id="menuBtn" aria-label="Мәзірді ашу">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- DRAWER -->
+<aside class="dw" id="dw">
+  <div class="dw-head">
+    <div class="dw-head-logo" id="dwLogoRow">
+    <span class="dw-logo">
+      <picture>
+        <source srcset="logo.svg" type="image/svg+xml"/>
+        <img src="logo.png" alt="TokBurger" width="120" height="172" decoding="async"/>
+      </picture>
+    </span>
+    <span class="dw-brand brand-text-ltn">TOKBURGER</span>
+    </div>
+    <button class="dw-x" id="dwX">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="dw-nav" id="dwNav">
+    <a href="#menu-anchor" class="dw-a" id="dna-menu" onclick="closeDw()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      <span id="dnaMenuTxt">Мәзір</span>
+    </a>
+    <a href="#" class="dw-a" id="dna-cart" onclick="event.preventDefault();closeDw();openCart();">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/><path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.96-1.57L21 8H6"/></svg>
+      <span id="dnaCartTxt">Себет</span>
+    </a>
+    <a href="#ft-contact-block" class="dw-a" id="dna-contact" onclick="closeDw()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.17a16 16 0 006.92 6.92l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      <span id="dnaContactTxt">Байланыс</span>
+    </a>
+  </nav>
+  <div class="dw-div"></div>
+  <div class="dw-soc">
+    <a id="dw-insta" href="#" class="soc-btn" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a id="dw-wa" href="#" class="soc-btn" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a id="dw-ph" href="#" class="soc-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.17a16 16 0 006.92 6.92l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+  </div>
+  <div class="dw-div"></div>
+  <div class="dw-sec">
+    <div class="dw-lbl" id="dwHoursLbl">Жұмыс уақыты</div>
+    <div class="dw-val" id="dw-hours">—</div>
+  </div>
+  <div class="dw-sec">
+    <div class="dw-lbl" id="dwCitiesLbl">Қалалар</div>
+    <div id="dw-cities"></div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div id="menu-anchor" style="height:1px"></div>
+<main>
+  <!-- BANNER -->
+  <section class="hero" id="hero-sec">
+    <div class="bwrap" id="bwrap"><div class="sk bwrap-sk"></div></div>
+  </section>
+
+  <!-- SEARCH -->
+  <div class="srch">
+    <div class="srch-row">
+      <div class="sbox">
+        <div class="sico">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7.5"/><line x1="20.2" y1="20.2" x2="16.4" y2="16.4"/></svg>
+        </div>
+        <input type="search" id="srchIn" placeholder="Іздеу..." autocomplete="off" enterkeyhint="search" inputmode="search"/>
+      </div>
+      <button type="button" class="fbtn" id="filterBtn" aria-label="Сүзгі" aria-expanded="false" aria-controls="filterSh">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        <span class="fbtn-dot" id="filterDot" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs-wrap">
+    <div class="tabs" id="tabsEl">
+      <div class="tabs-sk"><div class="sk tab-sk"></div><div class="sk tab-sk"></div><div class="sk tab-sk"></div></div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="pgrid-wrap">
+    <div class="pgrid" id="pgrid">
+      <div class="sk pc-sk"></div><div class="sk pc-sk"></div>
+      <div class="sk pc-sk"></div><div class="sk pc-sk"></div>
+    </div>
+  </div>
+  <section class="brand-clip-sec" id="brandClipSec" aria-labelledby="brandClipTtl">
+    <h2 class="brand-clip-ttl" id="brandClipTtl"></h2>
+    <p class="brand-clip-sub" id="brandClipSub"></p>
+    <div class="brand-clip-shell">
+      <div class="brand-clip-mount" id="brandClipMount"></div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<div id="footer-anchor" style="height:1px"></div>
+<footer>
+  <div class="ft-inner">
+    <div class="ft-ribbon" id="ftRibbon" role="region">
+      <div class="ft-pill"><span class="ft-pill-ic" aria-hidden="true"></span><span id="ftBadge1">—</span></div>
+      <div class="ft-pill"><span class="ft-pill-ic" aria-hidden="true"></span><span id="ftBadge2">—</span></div>
+      <div class="ft-pill"><span class="ft-pill-ic" aria-hidden="true"></span><span id="ftBadge3">—</span></div>
+    </div>
+    <div class="ft-grid">
+      <div class="ft-col" id="ft-brand-block">
+        <div class="ft-brand-row">
+          <span class="ft-brand-ico"><picture><source srcset="logo.svg" type="image/svg+xml"/><img src="logo.png" alt="" width="120" height="172" decoding="async"/></picture></span>
+          <div class="ft-brand brand-text-ltn">TOKBURGER</div>
+        </div>
+        <p class="ft-about" id="ftAboutTxt">Шырынды бургерлер, жылдам жеткізу және отбасыңызға арналған сүйікті мәзір. Тапсырыс беру бірнеше батырмада.</p>
+        <div class="ft-social">
+          <a class="ft-link" id="ft-insta" href="#" target="_blank" rel="noopener">Инстаграм</a>
+        </div>
+      </div>
+      <div class="ft-col ft-col-nav">
+        <div class="ft-ttl" id="ftNavTtl">Тез сілтемелер</div>
+        <nav class="ft-nav" id="ftNavQuick" aria-labelledby="ftNavTtl">
+          <a id="ftLnkMenu" href="#menu-anchor">Мәзір</a>
+          <a id="ftLnkCart" href="#">Себет</a>
+          <a id="ftLnkContact" href="#ft-contact-block">Байланыс</a>
+          <a id="ftLnk7" href="https://go.2gis.com/Rv6pQ" target="_blank" rel="noopener noreferrer">Пікір қалдыру</a>
+        </nav>
+        <div class="ft-ttl ft-ttl-sec" id="ftCatTtl">Санаттар</div>
+        <nav class="ft-nav" id="ftNavCats" aria-labelledby="ftCatTtl"></nav>
+      </div>
+      <div class="ft-col" id="ft-contact-block">
+        <div class="ft-ttl" id="ftContactTtl">Байланыс</div>
+        <div class="ft-list">
+          <div class="ft-item"><b id="ftPhoneLbl">Тел:</b> <a class="ft-phone" href="#" id="ft-phone-link">Телефон</a></div>
+          <div class="ft-item"><b id="ftHoursLbl">Уақыты:</b> <span id="ft-hours">—</span></div>
+          <div class="ft-item"><b id="ftCitiesLbl">Қала:</b> <span id="ft-cities">—</span></div>
+          <div class="ft-item"><b id="ftEmailLbl">Пошта:</b> <a class="ft-mail" id="ftMailLink" href="mailto:info@tokburger.kz">info@tokburger.kz</a></div>
+        </div>
+      </div>
+      <div class="ft-col">
+        <div class="ft-ttl" id="ftInstaTtl">Инстаграм</div>
+        <div class="ft-gallery" id="ft-gallery">
+          <a class="ft-gal-item" href="#" target="_blank" rel="noopener"></a>
+          <a class="ft-gal-item" href="#" target="_blank" rel="noopener"></a>
+          <a class="ft-gal-item" href="#" target="_blank" rel="noopener"></a>
+          <a class="ft-gal-item" href="#" target="_blank" rel="noopener"></a>
+          <a class="ft-gal-item" href="#" target="_blank" rel="noopener"></a>
+          <a class="ft-gal-item" href="#" target="_blank" rel="noopener"></a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-credit">
+        <p class="ft-credit-made" id="ftCreditMade"></p>
+        <p class="ft-credit-rights" id="ftRightsLine">© <span id="ftYear"></span> <span id="ftRights"></span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FILTER SHEET -->
+<div class="sheet" id="filterSh" role="dialog" aria-modal="true" aria-labelledby="filterTtl">
+  <div class="sh-drag"></div>
+  <div class="filter-hd" id="filterTtl">Сүзгі</div>
+  <div class="sh-body filter-body">
+    <div class="fgrp">
+      <div class="flbl" id="sortLblEl">Сұрыптау</div>
+      <select class="fselect" id="filterSortSel" aria-labelledby="sortLblEl">
+        <option value="default" id="optSortDef">Мәзір ретімен</option>
+        <option value="price_asc" id="optSortAsc">Алдымен арзан</option>
+        <option value="price_desc" id="optSortDesc">Алдымен қымбат</option>
+      </select>
+    </div>
+    <div class="fgrp fgrp-badges">
+      <div class="flbl" id="filterBadgeTtl">Тақта</div>
+      <label class="fcheck">
+        <input type="checkbox" id="filterHit"/>
+        <span id="filterHitLbl">ХИТ</span>
+      </label>
+      <label class="fcheck">
+        <input type="checkbox" id="filterNew"/>
+        <span id="filterNewLbl">ЖАҢА</span>
+      </label>
+    </div>
+  </div>
+  <div class="sh-foot filter-foot">
+    <button type="button" class="f-reset" id="filterReset">Тазалау</button>
+    <button type="button" class="f-apply" id="filterApply">Қолдану</button>
+  </div>
+</div>
+
+<!-- PRODUCT SHEET -->
+<div class="sheet" id="prodSh">
+  <button class="sh-close-abs" id="prodShClose">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="sh-drag"></div>
+  <div class="sh-body">
+    <div class="pp-img" id="ppImg">
+      <div class="noimg">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3v7"/></svg>
+      </div>
+    </div>
+    <div class="pp-cnt">
+      <div class="pp-row">
+        <h2 class="pp-name" id="ppName"></h2>
+        <div class="pp-ptag" id="ppPrice"></div>
+      </div>
+      <p class="pp-desc" id="ppDesc" style="display:none"></p>
+      <div class="pp-tag-band" id="ppTagBand"></div>
+        <div class="pp-sec" id="ppItlWrap" style="display:none">
+        <div class="pp-itl" id="ppItlTxt">ҚҰРАМЫ</div>
+        <div class="pp-sec-line"></div>
+      </div>
+      <div class="pp-chips" id="ppChips"></div>
+    </div>
+  </div>
+  <div class="sh-foot">
+    <button class="pp-add-btn" id="ppAddBtn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span id="ppAddTxt">Себетке қосу</span>
+    </button>
+    <div class="pp-qty" id="ppQtyWrap">
+      <span class="pp-qty-lbl" id="ppQtyLbl">Себетте</span>
+      <div class="pp-qty-ctrl">
+        <button class="pp-qb" id="ppMinusBtn" aria-label="Азайту">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <span class="pp-qv" id="ppQtyVal">1</span>
+        <button class="pp-qb" id="ppPlusBtn" aria-label="Қосу">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART SHEET -->
+<div class="sheet" id="cartSh">
+  <div class="sh-drag"></div>
+  <div class="cart-hd">
+    <div>
+      <div class="cart-ttl" id="cartTtl">Себет</div>
+      <div class="cart-sub" id="cartSub"></div>
+    </div>
+    <button class="cart-close-btn" id="cartClose">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="sh-body" id="cartBody">
+    <div class="cart-empty" id="cartEmpty">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-empty-txt" id="cartEmptyTxt">Себет бос</span>
+    </div>
+    <div id="cartItems"></div>
+  </div>
+  <div class="sh-foot" id="cartFoot" style="display:none">
+    <div class="tot-row">
+      <span class="tot-lbl" id="totLbl">Барлығы</span>
+      <span class="tot-price" id="totPrice"></span>
+    </div>
+    <button class="order-btn" id="orderBtn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span id="orderBtnTxt">Рәсімдеу</span>
+    </button>
+  </div>
+</div>
+
+<!-- CONFIRM MODAL -->
+<div class="cfm" id="cfmModal">
+  <div class="sh-drag" aria-hidden="true"></div>
+  <div class="sh-body" id="cfmBody">
+  <h3 class="cfm-ttl" id="cfmTtl">Тапсырысты растау</h3>
+  <div id="cfmItems"></div>
+  <div class="cfm-tot">
+    <span class="cfm-tot-lbl" id="cfmTotLbl">Барлығы:</span>
+    <span class="cfm-tot-price" id="cfmTotPrice"></span>
+  </div>
+  <p class="cfm-q" id="cfmQ">Тапсырысты рәсімдеуді растайсыз ба?</p>
+  <div class="cfm-acts">
+    <button class="cfm-cancel" id="cfmCancel">Болдырмау</button>
+    <button class="cfm-go" id="cfmGo">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span id="cfmGoTxt">WhatsApp-қа жіберу</span>
+    </button>
+  </div>
+  </div>
+</div>
+
+<!-- FAB: cart (shown only when cart has items) -->
+<div class="fab-stack" id="fabStack">
+  <button type="button" class="cart-fab" id="cartFabBtn" title="Себет" aria-label="Себет" hidden>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/><path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.96-1.57L21 8H6"/></svg>
+    <span class="cart-bdg" id="cartBdg">0</span>
+  </button>
+</div>
+
+<div id="toast"></div>
+
+<button type="button" class="scroll-top" id="scrollTopBtn" aria-label="Жоғарыға">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+// ══════════════════════════════════════════════════════
+//  CONFIG — суперbase деректеріңізді қойыңыз
+// ══════════════════════════════════════════════════════
+const SB_URL = 'https://vyeromkisagldmfaxxvs.supabase.co';
+const SB_KEY = 'sb_publishable_racizsDdHPLvkn0sjpeHNw_LzROpdZ0';
+const IS_LOCAL_FILE = !!window.__TB_IS_FILE__;
+let _sb=null;
+function getSb(){
+  if(typeof supabase==='undefined')return null;
+  if(!_sb)_sb=supabase.createClient(SB_URL,SB_KEY);
+  return _sb;
+}
+
+// ── STATE ──────────────────────────────────────────────
+const S = {
+  cart:[], settings:{}, watpl:{},
+  cats:[], prods:[], catId:null, curProd:null, q:'',
+  filterSort:'default', filterHit:false, filterNew:false,
+  lang: (localStorage.getItem('tokburger_lang')||'kk'),
+  banTmr: null, banH: 0, ltnTmr: null
+};
+const CART_KEY='tokburger_cart_v1';
+const DEFAULT_INSTAGRAM_URL='https://www.instagram.com/tokburger_official/';
+const REVIEW_2GIS_URL='https://go.2gis.com/Rv6pQ';
+if(S.lang!=='ru'&&S.lang!=='kk')S.lang='kk';
+
+// ── i18n (RU/KK) ───────────────────────────────────────
+const TXT = {
+  ru:{
+    search:'Поиск...',ingredients:'СОСТАВ',addcart:'В корзину',cart:'Корзина',
+    emptycart:'Корзина пуста',total:'Итого',orderbtn:'Оформить',
+    confirmttl:'Подтверждение заказа',totalcolon:'Итого:',
+    confirmq:'Вы уверены, что хотите оформить заказ?',cancel:'Отмена',
+    gosend:'Отправить в\u00A0WhatsApp',added:'Добавлено в корзину',qtyLess:'Количество уменьшено',qtyRemoved:'Удалено из корзины',
+    noprod:'Товары не найдены',filter:'Фильтр',sortLbl:'Сортировка',sortDefault:'Как в меню',
+    sortCheap:'Сначала дешевле',sortExp:'Сначала дороже',filterBadgeTtl:'Бейдж',filterHit:'ХИТ',filterNew:'ЖАҢА',
+    filterApply:'Применить',filterReset:'Сбросить',menu:'Меню',contacts:'Контакты',
+    hours:'Часы работы',cities:'Города',phone:'Телефон',
+    ftAbout:'Сочные бургеры, горячая доставка и любимые позиции для всей семьи. Оформляйте заказ за пару кликов.',
+    ftContact:'Контакты',ftInsta:'Инстаграм',
+    ftLnk7:'Оставить отзыв',ftNavTtl:'Быстрые ссылки',ftCatTtl:'Категории',
+    ftPhoneLbl:'Тел:',ftHoursLbl:'Время:',ftCitiesLbl:'Город:',
+    skipLink:'Перейти к меню',scrollTopAria:'Вверх страницы',
+    ftBadge1:'Свежая готовка',ftBadge2:'Оформление в один клик',ftBadge3:'Витрина в Инстаграм',
+    ftRibbonAria:'Преимущества сервиса',
+    brandClipTitle:'TokBurger — прямо с кухни',
+    brandClipSub:'Загляните на нашу кухню: как собирают бургеры и как они попадают к вам горячими.',
+    brandClipFbTitle:'Видео не подключено',
+    brandClipFbTxt:'В настройках укажите ссылку на ролик YouTube.',
+    brandClipOpenInsta:'Открыть Instagram',
+    videoNoHtml5:'Ваш браузер не поддерживает воспроизведение видео.',
+    ftCreditMadeHtml:'Сайт создан командой <a class="ft-cred-link" href="https://www.instagram.com/jobalab_kz" target="_blank" rel="noopener">JobaLab</a>',
+    ftRights:'Все права защищены',emailLbl:'Почта:',defaultDesc:'Сочный бургер из свежих ингредиентов',
+    loadErr:'Нет интернета или не удалось загрузить данные. Попробуйте позже.',
+    fileOriginHint:'Сайт открыт как файл (file://): браузер блокирует загрузку данных из интернета. Откройте через локальный сервер (Live Server, npm serve) или по HTTPS на хостинге.',
+    close:'Закрыть',openMenu:'Открыть меню',langBtnAria:'Переключить язык',
+    qtyDec:'Убавить',qtyInc:'Добавить',incart:'В корзине',bannerAlt:'Баннер',logoAlt:'TokBurger',
+    waDefault:'Здравствуйте!\n\n*Корзина:*\n#cart\n\n*Время заказа:* #time\n*Итого:* #sum ₸\n\nХочу оформить заказ!',
+    items:['товар','товара','товаров']
+  },
+  kk:{
+    search:'Іздеу...',ingredients:'ҚҰРАМЫ',addcart:'Себетке қосу',cart:'Себет',
+    emptycart:'Себет бос',total:'Барлығы',orderbtn:'Рәсімдеу',
+    confirmttl:'Тапсырысты растау',totalcolon:'Барлығы:',
+    confirmq:'Тапсырысты рәсімдеуді растайсыз ба?',cancel:'Болдырмау',
+    gosend:'WhatsApp-ға\u00A0жіберу',added:'Себетке қосылды',qtyLess:'Саны азайды',qtyRemoved:'Себеттен өшірілді',
+    noprod:'Өнімдер табылмады',filter:'Сүзгі',sortLbl:'Сұрыптау',sortDefault:'Мәзір ретімен',
+    sortCheap:'Алдымен арзан',sortExp:'Алдымен қымбат',filterBadgeTtl:'Тақта',filterHit:'ХИТ',filterNew:'ЖАҢА',
+    filterApply:'Қолдану',filterReset:'Тазалау',menu:'Мәзір',contacts:'Байланыс',
+    hours:'Жұмыс уақыты',cities:'Қалалар',phone:'Телефон',
+    ftAbout:'Шырынды бургерлер, жылдам жеткізу және отбасыңызға арналған сүйікті мәзір. Тапсырыс беру бірнеше батырмада.',
+    ftContact:'Байланыс',ftInsta:'Инстаграм',
+    ftLnk7:'Пікір қалдыру',ftNavTtl:'Тез сілтемелер',ftCatTtl:'Санаттар',
+    ftPhoneLbl:'Тел:',ftHoursLbl:'Уақыты:',ftCitiesLbl:'Қала:',
+    skipLink:'Мәзірге',scrollTopAria:'Беттің басына',
+    ftBadge1:'Жаңа пісіру',ftBadge2:'Тапсырыс бір басумен',ftBadge3:'Инстаграмдағы таңдау',
+    ftRibbonAria:'Сервис артықшылықтары',
+    brandClipTitle:'TokBurger — ас үйден көрініс',
+    brandClipSub:'Аспазханаға үңіліңіз: бургерлер қалай жиналады және ыстық күйінде қалай ұсынылады.',
+    brandClipFbTitle:'Бейне қосылмаған',
+    brandClipFbTxt:'Баптауда YouTube сілтемесін көрсетіңіз.',
+    brandClipOpenInsta:'Instagram ашу',
+    videoNoHtml5:'Браузеріңіз бейнені қолдамайды.',
+    ftCreditMadeHtml:'Сайтты жасаған <a class="ft-cred-link" href="https://www.instagram.com/jobalab_kz" target="_blank" rel="noopener">JobaLab</a> командасы',
+    ftRights:'Барлық құқықтар қорғалған',emailLbl:'Пошта:',defaultDesc:'Шырынды бургер, жаңа ингредиенттер',
+    loadErr:'Интернет жоқ немесе деректер жүктелмеді. Кейінірек қайталап көріңіз.',
+    fileOriginHint:'Файл түрінде ашылған (file://): браузер интернеттен дерек жүктеуді блоктайды. Live Server, npm serve немесе HTTPS мекенжайы арқылы ашыңыз.',
+    close:'Жабу',openMenu:'Мәзірді ашу',langBtnAria:'Тілді ауыстыру',
+    qtyDec:'Азайту',qtyInc:'Қосу',incart:'Себетте',bannerAlt:'Баннер',logoAlt:'TokBurger',
+    waDefault:'Сәлеметсізбе!\n\n*Себет:*\n#cart\n\n*Тапсырыс уақыты:* #time\n*Жалпы:* #sum ₸\n\nТапсырыс бергім келеді!',
+    items:['тауар','тауар','тауар']
+  }
+};
+const t=k=>(TXT[S.lang]&&TXT[S.lang][k])||(TXT.ru[k]||k);
+const $=id=>document.getElementById(id);
+const getCartItem=id=>S.cart.find(c=>c.id===id);
+/* WhatsApp: дерекқорда аудармабен бұзылған үлгілерді өткізбей, таза RU/KK fallback */
+const WA_TPL_RU='Здравствуйте!\n\n*Корзина:*\n#cart\n\n*Время заказа:* #time\n*Итого:* #sum ₸\n\nХочу оформить заказ!';
+const WA_TPL_KK='Сәлеметсізбе!\n\n*Себет:*\n#cart\n\n*Тапсырыс уақыты:* #time\n*Жалпы:* #sum ₸\n\nТапсырыс бергім келеді!';
+function isValidWaTemplate(s){
+  if(!s||typeof s!=='string')return false;
+  const t=String(s).replace(/^\uFEFF/,'').trim();
+  if(!/#cart\b/.test(t)||!/#time\b/.test(t)||!/#(?:sum|price)\b/.test(t))return false;
+  // Ескі MyMemory/қолмен бүлінген үлгілер: плейсхолдерлер қалған жоқ, нето мәтін қалған
+  if(/corzine|#\s*include|include\s*\/\/\s*timestamp|#\s*\/\//i.test(t))return false;
+  if(/\(sum\)|\(#\s*include/i.test(t))return false;
+  if(/Для\s+собаки/i.test(t))return false;
+  return true;
+}
+function pickWaTemplate(){
+  const w=S.watpl||{};
+  let v='';
+  if(S.lang==='kk'){
+    if(isValidWaTemplate(w.kk))v=w.kk;
+    else if(isValidWaTemplate(w.ru))v=w.ru;
+    else v=WA_TPL_KK;
+  }else{
+    /* RU: тек орысша үлгі — KK кешуі WhatsApp мәтінін қазақшалап жібереді */
+    if(isValidWaTemplate(w.ru))v=w.ru;
+    else v=WA_TPL_RU;
+  }
+  if(!isValidWaTemplate(v))v=S.lang==='kk'?WA_TPL_KK:WA_TPL_RU;
+  return v;
+}
+
+function trimField(v){
+  if(v===undefined||v===null)return '';
+  const s=String(v).trim();
+  return s;
+}
+function textHasLatinScript(s){
+  if(!s)return false;
+  try{return/\p{Script=Latin}/u.test(s)}catch(_){return/[A-Za-z]/.test(s)}
+}
+function textHasCyrillicScript(s){
+  if(!s)return false;
+  try{return/\p{Script=Cyrillic}/u.test(s)}catch(_){
+    return/[а-яА-ЯёЁӘҒҚҢӨҰҮҺІәғқңөұүһі]/.test(s)
+  }
+}
+/** Латын әріптері бар, кирилл жоқ — бренд/ағылшынша жол artifact терме айналдырылмайды */
+function isEnglishLatinOnly(s){return textHasLatinScript(s)&&!textHasCyrillicScript(s)}
+// KK/RU + қолда бар болса EN (ағылшынша жолдарды kk↔ru ауыстыру кезінде бірдей қалдыру)
+function pick(obj,field){
+  if(!obj)return '';
+  const kk=trimField(obj[`${field}_kk`]);
+  const ru=trimField(obj[`${field}_ru`]);
+  const en=trimField(obj[`${field}_en`]);
+  if(isEnglishLatinOnly(kk)&&ru&&textHasCyrillicScript(ru))return kk;
+  const pref=S.lang==='kk'?[kk,ru,en]:[ru,kk,en];
+  for(const v of pref){if(v)return v}
+  return '';
+}
+
+// ── OVERLAY ────────────────────────────────────────────
+let ovlCb=null;
+function showOvl(cb){ovlCb=cb;$('ovl').classList.add('on');document.body.style.overflow='hidden'}
+function hideOvl(){$('ovl').classList.remove('on');document.body.style.overflow='';ovlCb=null}
+$('ovl').onclick=()=>{if(ovlCb)ovlCb()};
+
+// ── DRAWER ─────────────────────────────────────────────
+function openDw(){$('dw').classList.add('on');showOvl(closeDw)}
+function closeDw(){$('dw').classList.remove('on');hideOvl()}
+$('menuBtn').onclick=openDw;
+$('dwX').onclick=closeDw;
+
+// ── PRODUCT SHEET ──────────────────────────────────────
+function openProd(p){
+  dismissFilterUi();
+  S.curProd=p;
+  const img=$('ppImg');
+  img.innerHTML='';
+  if(p.image_url){
+    const i=document.createElement('img');
+    i.src=p.image_url;i.alt='';
+    i.onerror=()=>{i.remove();img.innerHTML=noImgSvg()};
+    img.appendChild(i);
+  } else {img.innerHTML=noImgSvg()}
+  $('ppName').textContent=pick(p,'name');
+  const pcur=+p.price||0,oldP=+p.old_price;
+  const ppe=$('ppPrice');
+  if(oldP>0&&oldP>pcur){
+    ppe.className='pp-ptag pp-ptag-sale';
+    ppe.innerHTML=`<span class="pp-ptag-old" aria-hidden="true">₸ ${fmt(oldP)}</span><span>₸ ${fmt(pcur)}</span>`;
+  }else{
+    ppe.className='pp-ptag';
+    ppe.textContent='₸ '+fmt(pcur);
+  }
+  const desc=pick(p,'desc');
+  const ppd=$('ppDesc');ppd.textContent=desc;ppd.style.display=desc?'':'none';
+  const tagLine=pick(p,'tag');
+  const ptb=$('ppTagBand');
+  if(ptb){
+    if(tagLine){ptb.innerHTML=`<span class="pp-product-tag">${esc(tagLine)}</span>`;ptb.classList.add('on')}
+    else{ptb.innerHTML='';ptb.classList.remove('on')}
+  }
+  const ings=pick(p,'ingredients').split(',').map(s=>s.trim()).filter(Boolean);
+  const ppItlWrap=$('ppItlWrap');if(ppItlWrap)ppItlWrap.style.display=ings.length?'':'none';
+  $('ppChips').innerHTML=ings.map(s=>`<span class="chip">${esc(s)}</span>`).join('');
+  const ppItl=$('ppItlTxt');if(ppItl)ppItl.textContent=t('ingredients');
+  $('ppAddTxt').textContent=t('addcart');
+  const pql=$('ppQtyLbl');if(pql)pql.textContent=t('incart');
+  updateProdQtyUI();
+  $('prodSh').classList.add('on');
+  showOvl(closeProd);
+}
+function closeProd(){$('prodSh').classList.remove('on');hideOvl()}
+$('prodShClose').onclick=closeProd;
+
+function updateProdQtyUI(){
+  const p=S.curProd;
+  if(!p)return;
+  const item=getCartItem(p.id);
+  const qty=item?item.qty:0;
+  const addBtn=$('ppAddBtn');
+  const qtyWrap=$('ppQtyWrap');
+  $('ppQtyVal').textContent=qty||1;
+  if(qty>0){
+    addBtn.style.display='none';
+    qtyWrap.classList.add('on');
+  }else{
+    addBtn.style.display='';
+    qtyWrap.classList.remove('on');
+  }
+}
+
+$('ppAddBtn').onclick=()=>{
+  if(!S.curProd)return;
+  addCart(S.curProd);
+  updateProdQtyUI();
+  showToast(t('added'));
+};
+$('ppMinusBtn').onclick=()=>{
+  if(!S.curProd)return;
+  const removed=changeQty(S.curProd.id,-1);
+  updateProdQtyUI();
+  showToast(t(removed?'qtyRemoved':'qtyLess'));
+};
+$('ppPlusBtn').onclick=()=>{
+  if(!S.curProd)return;
+  changeQty(S.curProd.id,1);
+  updateProdQtyUI();
+};
+
+// ── CART ───────────────────────────────────────────────
+function readCart(){
+  try{
+    const raw=localStorage.getItem(CART_KEY);
+    const parsed=JSON.parse(raw||'[]');
+    return Array.isArray(parsed)?parsed:[];
+  }catch(_){return []}
+}
+function writeCart(){
+  try{localStorage.setItem(CART_KEY,JSON.stringify(S.cart))}catch(_){}
+}
+function addCart(p){
+  const e=S.cart.find(c=>c.id===p.id);
+  if(e)e.qty++;else S.cart.push({...p,qty:1});
+  writeCart();
+  updateBadge();
+  if($('cartSh').classList.contains('on'))renderCart();
+  renderProds();
+  if(S.curProd&&S.curProd.id===p.id)updateProdQtyUI();
+}
+function changeQty(id,d){
+  const e=S.cart.find(c=>c.id===id);
+  if(!e)return false;
+  e.qty+=d;
+  if(e.qty<=0){
+    S.cart=S.cart.filter(c=>c.id!==id);
+    writeCart();
+    renderCart();
+    updateBadge();
+    renderProds();
+    if(S.curProd&&S.curProd.id===id)updateProdQtyUI();
+    return true;
+  }
+  writeCart();
+  renderCart();
+  updateBadge();
+  renderProds();
+  if(S.curProd&&S.curProd.id===id)updateProdQtyUI();
+  return false;
+}
+function cartDec(id){
+  const removed=changeQty(id,-1);
+  showToast(t(removed?'qtyRemoved':'qtyLess'));
+}
+function delCart(id){
+  S.cart=S.cart.filter(c=>c.id!==id);
+  writeCart();
+  renderCart();
+  updateBadge();
+  renderProds();
+  if(S.curProd&&S.curProd.id===id)updateProdQtyUI();
+  showToast(t('qtyRemoved'));
+}
+function getTotal(){return S.cart.reduce((a,c)=>a+c.price*c.qty,0)}
+function getCount(){return S.cart.reduce((a,c)=>a+c.qty,0)}
+function updateBadge(){
+  const n=getCount();
+  const cb=$('cartBdg');if(cb){cb.textContent=n;cb.classList.toggle('on',n>0)}
+  const cfb=$('cartFabBtn');
+  if(cfb){
+    cfb.toggleAttribute('hidden',n<1);
+    cfb.setAttribute('aria-hidden',n<1?'true':'false');
+  }
+}
+
+function renderCart(){
+  const ci=$('cartItems'),ce=$('cartEmpty'),cf=$('cartFoot');
+  if(!S.cart.length){
+    ci.innerHTML='';
+    ce.style.display='flex';
+    cf.style.display='none';
+    const c0=$('cartSh');
+    if(c0) c0.classList.remove('cartSh--one','cartSh--mid');
+    return;
+  }
+  ce.style.display='none';cf.style.display='block';
+  ci.innerHTML='';
+  S.cart.forEach(p=>{
+    const name=pick(p,'name');
+    const d=document.createElement('div');d.className='ci';
+    d.innerHTML=`
+      <div class="ci-img">${p.image_url?`<img src="${p.image_url}" alt="" onerror="this.style.display='none'">`:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3v7"/></svg>'}</div>
+      <div class="ci-inf">
+        <div class="ci-name">${esc(name)}</div>
+        <div class="ci-p">₸ ${fmt(p.price*p.qty)}</div>
+      </div>
+      <div class="ci-ctrl">
+        <button class="qb" onclick="cartDec('${p.id}')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <span class="qv">${p.qty}</span>
+        <button class="qb" onclick="changeQty('${p.id}',1)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      </div>
+      <button class="del-btn" onclick="delCart('${p.id}')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg></button>
+    `;
+    ci.appendChild(d);
+  });
+  $('totPrice').textContent='₸ '+fmt(getTotal());
+  const n=getCount();
+  $('cartSub').textContent=cartCountLabel(n);
+  const csh=$('cartSh');
+  if(csh){
+    if(S.cart.length===1)csh.classList.add('cartSh--one');
+    else csh.classList.remove('cartSh--one','cartSh--mid');
+  }
+}
+
+function openCart(){dismissFilterUi();renderCart();$('cartSh').classList.add('on');showOvl(closeCart)}
+function closeCart(){$('cartSh').classList.remove('on','cartSh--one','cartSh--mid');hideOvl()}
+$('cartClose').onclick=closeCart;
+$('cartFabBtn').onclick=openCart;
+
+// ── CONFIRM ────────────────────────────────────────────
+$('orderBtn').onclick=openConfirm;
+function openConfirm(){
+  if(!S.cart.length)return;
+  $('cfmTtl').textContent=t('confirmttl');
+  $('cfmTotLbl').textContent=t('totalcolon');
+  $('cfmQ').textContent=t('confirmq');
+  $('cfmCancel').textContent=t('cancel');
+  $('cfmGoTxt').textContent=t('gosend');
+  const box=$('cfmItems');box.innerHTML='';
+  S.cart.forEach(p=>{
+    const name=pick(p,'name');
+    const r=document.createElement('div');r.className='cfm-row';
+    r.innerHTML=`<span class="cfm-rname">${esc(name)} x${p.qty}</span><span class="cfm-rprice">₸ ${fmt(p.price*p.qty)}</span>`;
+    box.appendChild(r);
+  });
+  $('cfmTotPrice').textContent='₸ '+fmt(getTotal());
+  $('cfmBg').classList.add('on');
+  $('cfmModal').classList.add('on');
+}
+function closeConfirm(){$('cfmBg').classList.remove('on');$('cfmModal').classList.remove('on')}
+$('cfmCancel').onclick=closeConfirm;
+$('cfmBg').onclick=closeConfirm;
+
+$('cfmGo').onclick=()=>{
+  let tpl=pickWaTemplate()||t('waDefault');
+  if(!isValidWaTemplate(tpl))tpl=S.lang==='kk'?WA_TPL_KK:WA_TPL_RU;
+  const lines=S.cart.map(p=>`- ${pick(p,'name')} x${p.qty} — ${fmt(p.price*p.qty)} ₸`).join('\n');
+  const now=new Date();
+  const date=now.toLocaleDateString(S.lang==='kk'?'kk-KZ':'ru-RU');
+  const time=now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+  const stamp=`${time}, ${date}`;
+  const sumStr=fmt(getTotal());
+  const msg=String(tpl)
+    .replace(/#cart/g,lines)
+    .replace(/#time/g,stamp)
+    .replace(/#sum/g,sumStr)
+    .replace(/#price/g,sumStr);
+  const num=(S.settings.whatsapp_number||'77001234567').replace(/\D/g,'');
+  window.open(`https://wa.me/${num}?text=${encodeURIComponent(msg)}`,'_blank');
+  closeConfirm();closeCart();
+  S.cart=[];updateBadge();
+  writeCart();
+  renderCart();
+  renderProds();
+  if(S.curProd)updateProdQtyUI();
+};
+
+// ── LANG BUTTON (KZ / RU иллюстрациялық тулар) ───────
+function langBtnInnerHtml(){
+  const kk=S.lang==='kk';
+  const svgKk='<svg class="lang-ic" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" rx="1.2" fill="#00AFCC"/><circle cx="9.2" cy="8" r="2.3" fill="#FEC50C"/></svg>';
+  const svgRu='<svg class="lang-ic" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect y="0" width="24" height="5.33" fill="#fff"/><rect y="5.33" width="24" height="5.34" fill="#0039A6"/><rect y="10.67" width="24" height="5.33" fill="#D52B1E"/></svg>';
+  return(kk?svgKk:svgRu)+`<span class="lang-txt">${kk?'ҚАЗ':'RU'}</span>`;
+}
+
+// ── STATIC LABELS (RU) ─────────────────────────────────
+function applyI18n(){
+  const set=(id,val)=>{const el=$(id);if(el)el.textContent=val};
+  document.documentElement.lang=S.lang==='kk'?'kk':'ru';
+  const fcm=$('ftCreditMade');if(fcm)fcm.innerHTML=t('ftCreditMadeHtml');
+  set('ftRights',t('ftRights'));
+  set('ftEmailLbl',t('emailLbl'));
+  set('ppItlTxt',t('ingredients'));
+  set('ppQtyLbl',t('incart'));
+  const sr=$('srchIn');if(sr)sr.placeholder=t('search');
+  set('dnaMenuTxt',t('menu'));
+  set('dnaCartTxt',t('cart'));
+  set('dnaContactTxt',t('contacts'));
+  set('dwHoursLbl',t('hours'));
+  set('dwCitiesLbl',t('cities'));
+  set('cartTtl',t('cart'));
+  set('cartEmptyTxt',t('emptycart'));
+  set('totLbl',t('total'));
+  set('orderBtnTxt',t('orderbtn'));
+  set('ftAboutTxt',t('ftAbout'));
+  set('ftContactTtl',t('ftContact'));
+  set('ftNavTtl',t('ftNavTtl'));
+  set('ftCatTtl',t('ftCatTtl'));
+  set('ftInstaTtl',t('ftInsta'));
+  set('ftPhoneLbl',t('ftPhoneLbl'));
+  set('ftHoursLbl',t('ftHoursLbl'));
+  set('ftCitiesLbl',t('ftCitiesLbl'));
+  set('ftLnkMenu',t('menu'));
+  set('ftLnkCart',t('cart'));
+  set('ftLnkContact',t('contacts'));
+  set('ftLnk7',t('ftLnk7'));
+  const ftCart=$('ftLnkCart');
+  if(ftCart && !ftCart._tbCart){
+    ftCart._tbCart=1;
+    ftCart.addEventListener('click',e=>{e.preventDefault();openCart()});
+  }
+  ['ftLnkMenu','ftLnkContact','ftLnk7','ftLnkCart'].forEach(id=>{const el=$(id);if(!el||el._tbCloseDw)return;el._tbCloseDw=1;el.addEventListener('click',()=>{try{closeDw()}catch(_){}})});
+  set('ftBadge1',t('ftBadge1'));
+  set('ftBadge2',t('ftBadge2'));
+  set('ftBadge3',t('ftBadge3'));
+  const fr=$('ftRibbon');if(fr)fr.setAttribute('aria-label',t('ftRibbonAria'));
+  const skl=$('skipLink');if(skl)skl.textContent=t('skipLink');
+  const stb=$('scrollTopBtn');if(stb)stb.setAttribute('aria-label',t('scrollTopAria'));
+  const fp=$('ft-phone-link');
+  if(fp && !S.settings.phone)fp.textContent=t('phone');
+  const fin=$('ft-insta');if(fin)fin.textContent=t('ftInsta');
+  set('filterTtl',t('filter'));
+  set('sortLblEl',t('sortLbl'));
+  set('optSortDef',t('sortDefault'));
+  set('optSortAsc',t('sortCheap'));
+  set('optSortDesc',t('sortExp'));
+  set('filterBadgeTtl',t('filterBadgeTtl'));
+  set('filterHitLbl',t('filterHit'));
+  set('filterNewLbl',t('filterNew'));
+  set('filterApply',t('filterApply'));
+  set('filterReset',t('filterReset'));
+  const fb=$('filterBtn');if(fb)fb.setAttribute('aria-label',t('filter'));
+  const lb=$('langBtn');if(lb){lb.innerHTML=langBtnInnerHtml();lb.setAttribute('aria-label',t('langBtnAria'))}
+  const mb=$('menuBtn');if(mb)mb.setAttribute('aria-label',t('openMenu'));
+  const dx=$('dwX');if(dx)dx.setAttribute('aria-label',t('close'));
+  const psx=$('prodShClose');if(psx)psx.setAttribute('aria-label',t('close'));
+  const cc=$('cartClose');if(cc)cc.setAttribute('aria-label',t('close'));
+  const pmi=$('ppMinusBtn');if(pmi)pmi.setAttribute('aria-label',t('qtyDec'));
+  const ppl=$('ppPlusBtn');if(ppl)ppl.setAttribute('aria-label',t('qtyInc'));
+  const cfb=$('cartFabBtn');if(cfb){cfb.setAttribute('title',t('cart'));cfb.setAttribute('aria-label',t('cart'))}
+  set('cfmTtl',t('confirmttl'));
+  set('cfmTotLbl',t('totalcolon'));
+  set('cfmQ',t('confirmq'));
+  set('cfmCancel',t('cancel'));
+  set('cfmGoTxt',t('gosend'));
+  set('brandClipTtl',t('brandClipTitle'));
+  set('brandClipSub',t('brandClipSub'));
+  syncBrandClip();
+  const nb1=$('nbLogo');if(nb1){const im=nb1.querySelector('img');if(im)im.alt=t('logoAlt')}
+  const dwl=$('dw')&&$('dw').querySelector('.dw-logo img');if(dwl)dwl.alt=t('logoAlt')
+  const fti=$('ft-brand-block')&&$('ft-brand-block').querySelector('.ft-brand-ico img');if(fti)fti.alt=t('logoAlt')
+}
+
+// ── SEARCH & FILTER ───────────────────────────────────
+let st;
+function syncFilterForm(){
+  const sel=$('filterSortSel');
+  if(sel){
+    const v=S.filterSort==='price_asc'||S.filterSort==='price_desc'?S.filterSort:'default';
+    sel.value=v;
+  }
+  const fh=$('filterHit');if(fh)fh.checked=!!S.filterHit;
+  const fn=$('filterNew');if(fn)fn.checked=!!S.filterNew;
+}
+function updateFilterBtn(){
+  const has=S.filterSort!=='default'||S.filterHit||S.filterNew;
+  const fb=$('filterBtn');
+  if(fb){fb.classList.toggle('has-filt',has);fb.classList.toggle('on',has)}
+}
+function openFilter(){
+  syncFilterForm();
+  $('filterSh').classList.add('on');
+  const fb=$('filterBtn');if(fb)fb.setAttribute('aria-expanded','true');
+  showOvl(closeFilter);
+}
+function closeFilter(){
+  $('filterSh').classList.remove('on');
+  const fb=$('filterBtn');if(fb)fb.setAttribute('aria-expanded','false');
+  hideOvl();
+}
+function dismissFilterUi(){
+  $('filterSh').classList.remove('on');
+  const fb=$('filterBtn');if(fb)fb.setAttribute('aria-expanded','false');
+}
+$('filterBtn').onclick=openFilter;
+$('filterApply').onclick=()=>{
+  const s=$('filterSortSel');
+  const v=s&&s.value;
+  S.filterSort=(v==='price_asc'||v==='price_desc')?v:'default';
+  S.filterHit=!!($('filterHit')&&$('filterHit').checked);
+  S.filterNew=!!($('filterNew')&&$('filterNew').checked);
+  updateFilterBtn();
+  closeFilter();
+  renderProds();
+};
+$('filterReset').onclick=()=>{
+  S.filterSort='default';
+  S.filterHit=false;
+  S.filterNew=false;
+  syncFilterForm();
+  updateFilterBtn();
+  renderProds();
+  closeFilter();
+};
+
+const _srchIn=$('srchIn');
+if(_srchIn){
+  _srchIn.addEventListener('input',e=>{clearTimeout(st);S.q=e.target.value;st=setTimeout(renderProds,180)});
+  _srchIn.addEventListener('search',()=>{S.q=_srchIn.value;renderProds()});
+  _srchIn.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();_srchIn.blur();clearTimeout(st);S.q=_srchIn.value;renderProds()}});
+}
+
+function cartCountLabel(n){
+  const forms=t('items');
+  if(!Array.isArray(forms)||forms.length<3)return `${n}`;
+  if(S.lang==='kk')return `${n} ${forms[0]}`;
+  const m=Math.abs(n)%100;
+  const k=m%10;
+  const word=(m>10&&m<20)?forms[2]:(k===1?forms[0]:(k>=2&&k<=4?forms[1]:forms[2]));
+  return `${n} ${word}`;
+}
+
+// ── BANNER (carousel: 10s auto, slide + swipe) ─────────
+const BAN_INTERVAL_MS=10000;
+function ltnPolyToD(pts){
+  return pts.map(function(p,i){
+    return (i?'L ':'M ')+p[0].toFixed(2)+' '+p[1].toFixed(2);
+  }).join('');
+}
+function ltnBranchPoly(ax,ay,baseAng,len,segs){
+  const pts=[[ax,ay]];
+  let x=ax,y=ay,ang=baseAng;
+  let travelled=0;
+  const stepLen=len/Math.max(3,segs);
+  for(let i=1;i<=segs&&travelled<len*1.08;i++){
+    ang+=(Math.random()-0.5)*0.72;
+    const step=stepLen*(0.62+Math.random()*0.58);
+    x+=Math.cos(ang)*step;
+    y+=Math.sin(ang)*step;
+    travelled+=step;
+    pts.push([x,y]);
+  }
+  return pts;
+}
+/** Процедуралық найзағай: тік негізгі үшқын + тармақтар, апельсин жарығы + ақ сары өзек */
+function buildBannerLightningSvg(opts){
+  opts=opts||{};
+  const dense=opts.dense!==false;
+  const uid='bn'+((Math.random()*1e9)|0);
+  const vbW=100,vbH=220;
+  const main=[];
+  let x=32+Math.random()*36,y=1.5;
+  main.push([x,y]);
+  let dir=Math.PI/2+(Math.random()-0.5)*0.38;
+  while(y<vbH-10&&main.length<(dense?42:28)){
+    dir+=(Math.random()-0.5)*0.58;
+    dir=Math.max(Math.PI*0.3,Math.min(Math.PI*0.94,dir));
+    const step=9+Math.random()*12.5;
+    x+=Math.cos(dir)*step;
+    y+=Math.sin(dir)*step;
+    x=Math.max(3.5,Math.min(vbW-3.5,x));
+    main.push([x,y]);
+  }
+  const layers=[];
+  layers.push({pts:main,glow:dense?8.8:6.8,mid:dense?4.35:3.25,core:dense?1.58:1.18,z:0});
+  const brN=dense?(9+((Math.random()*14)|0)):(6+((Math.random()*8)|0));
+  for(let b=0;b<brN;b++){
+    if(main.length<5)break;
+    const mi=2+((Math.random()*(main.length-4))|0);
+    const ax=main[mi][0],ay=main[mi][1];
+    const px=main[mi-1][0],py=main[mi-1][1];
+    const tang=Math.atan2(ay-py,ax-px);
+    const side=Math.random()>0.5?1:-1;
+    const spread=0.55+Math.random()*0.95;
+    const bang=tang+side*(Math.PI*0.38+spread);
+    const len=(dense?18:14)+Math.random()*(dense?50:34);
+    const segs=4+((Math.random()*10)|0);
+    const pts=ltnBranchPoly(ax,ay,bang,len,segs);
+    if(pts.length<2)continue;
+    layers.push({pts,glow:dense?4.8:3.5,mid:dense?2.08:1.52,core:dense?0.82:0.56,z:1});
+    if(dense&&Math.random()>0.58&&pts.length>5){
+      const ti=2+((Math.random()*(pts.length-4))|0);
+      const tang2=Math.atan2(pts[ti][1]-pts[ti-1][1],pts[ti][0]-pts[ti-1][0]);
+      const bang2=tang2+(Math.random()>0.5?1:-1)*(0.65+Math.random()*0.58);
+      const sub=ltnBranchPoly(pts[ti][0],pts[ti][1],bang2,len*(0.14+Math.random()*0.22),3+((Math.random()*4)|0));
+      if(sub.length>1)
+        layers.push({pts:sub,glow:2.3,mid:0.98,core:0.38,z:2});
+    }
+  }
+  layers.sort(function(a,b){return a.z-b.z});
+  let glow='',mid='',core='';
+  layers.forEach(function(L){
+    const d=ltnPolyToD(L.pts);
+    const gw=L.z===0?0.11:(L.z===1?0.12:0.1);
+    glow+='<path fill="none" stroke="#ff770a" stroke-width="'+L.glow+'" stroke-linecap="round" stroke-linejoin="round" opacity="'+gw+'" d="'+d+'"/>';
+    mid+='<path fill="none" stroke="#ff983f" stroke-width="'+L.mid+'" stroke-linecap="round" stroke-linejoin="round" opacity=".36" d="'+d+'"/>';
+    core+='<path fill="none" stroke="#fffdf8" stroke-width="'+L.core+'" stroke-linecap="round" stroke-linejoin="round" opacity=".94" d="'+d+'"/>';
+    core+='<path fill="none" stroke="url(#'+uid+'hot)" stroke-width="'+(L.core*0.36).toFixed(2)+'" stroke-linecap="round" stroke-linejoin="round" opacity=".98" d="'+d+'"/>';
+  });
+  return '<svg class="ltn-bolt-svg" viewBox="0 0 '+vbW+' '+vbH+'" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'+
+    '<defs>'+
+    '<linearGradient id="'+uid+'hot" x1="40" y1="0" x2="64" y2="'+vbH+'" gradientUnits="userSpaceOnUse">'+
+    '<stop stop-color="#ffffff"/><stop offset=".18" stop-color="#fff8ea"/><stop offset=".42" stop-color="#ffd699"/><stop offset=".72" stop-color="#ff9335"/><stop offset="1" stop-color="#ea580c"/></linearGradient>'+
+    '<filter id="'+uid+'blur" x="-32%" y="-16%" width="164%" height="134%" color-interpolation-filters="sRGB">'+
+    '<feGaussianBlur stdDeviation="2.65" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'+
+    '</defs>'+
+    '<g filter="url(#'+uid+'blur)">'+glow+mid+'</g>'+
+    core+
+    '</svg>';
+}
+function makeLtnBoltShell(secondary){
+  const cls=secondary?'ltn-bolt ltn-bolt--sec':'ltn-bolt';
+  return '<div class="'+cls+'" aria-hidden="true"></div>';
+}
+function randBannerBoltPose(){
+  return{
+    left:20+Math.random()*60,
+    rot:-16+Math.random()*32,
+    scale:0.62+Math.random()*0.14
+  };
+}
+function applyBannerBoltPose(el,{left,rot,scale}){
+  el.style.left=`${left.toFixed(2)}%`;
+  el.style.transform=`translateX(-50%) rotate(${rot.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+}
+function bannerLightningEnabled(){
+  const raw=S.settings?.banner_lightning;
+  if(raw===undefined||raw===null)return true;
+  if(raw===false||raw===0)return false;
+  if(raw===true||raw===1)return true;
+  let v=String(raw).trim().replace(/^\ufeff/,'').replace(/[\u200B-\u200D\uFEFF]/g,'');
+  if(v.length>=2&&((v.startsWith('"')&&v.endsWith('"'))||(v.startsWith("'")&&v.endsWith("'"))))
+    v=v.slice(1,-1).trim();
+  const vl=v.toLowerCase();
+  if(['','0','false','no','off','n','disable','disabled','выкл','выключено','жоқ'].includes(vl))return false;
+  if(['1','true','yes','y','on','enable','enabled','да','вкл','включено','қосу','қосылған'].includes(vl))return true;
+  const n=parseFloat(vl.replace(',', '.'));
+  if(Number.isFinite(n)&&n===0)return false;
+  if(Number.isFinite(n)&&n>0)return true;
+  return true;
+}
+function teardownBannerLightning(bw){
+  if(S.ltnTmr){clearTimeout(S.ltnTmr);S.ltnTmr=null}
+  if(!bw)return;
+  bw.querySelectorAll('.ltn-fx').forEach(el=>el.remove());
+}
+function syncBannerLightningOverlay(){
+  const bw=$('bwrap');
+  if(!bw)return;
+  if(!bannerLightningEnabled()){teardownBannerLightning(bw);return}
+  ensureLightning(bw);
+}
+function ensureLightning(bw){
+  if(!bw)return;
+  if(!bannerLightningEnabled()){teardownBannerLightning(bw);return}
+  const fx=bw.querySelector('.ltn-fx');
+  if(fx){
+    const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!reduce&&!S.ltnTmr)initLightningLoop(fx);
+    return;
+  }
+  const d=document.createElement('div');
+  d.className='ltn-fx';
+  d.setAttribute('aria-hidden','true');
+  d.innerHTML='<div class="ltn-cloud" aria-hidden="true"><div class="ltn-cloud-deep"></div><div class="ltn-cloud-near"></div></div><div class="ltn-flash"></div><div class="ltn-burst"></div>'+makeLtnBoltShell(false)+makeLtnBoltShell(true);
+  bw.appendChild(d);
+  initLightningLoop(d);
+}
+function initLightningLoop(root){
+  if(S.ltnTmr){clearTimeout(S.ltnTmr);S.ltnTmr=null}
+  if(!root||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const strike=()=>{
+    if(!bannerLightningEnabled()){
+      teardownBannerLightning(root.closest('.bwrap'));
+      return;
+    }
+    if(!root.isConnected) return;
+    const bolts=root.querySelectorAll('.ltn-bolt');
+    const prim=bolts[0],sec=bolts[1];
+    const fork=!!sec&&Math.random()<0.52;
+    prim.innerHTML=buildBannerLightningSvg({dense:true});
+    if(sec)sec.innerHTML=fork?buildBannerLightningSvg({dense:false}):'';
+    const cx=28+Math.random()*44;
+    const clampFlash=v=>Math.max(12,Math.min(88,v));
+    root.style.setProperty('--burst-x',`${cx.toFixed(1)}%`);
+    root.style.setProperty('--burst-y',`${5+Math.random()*14}%`);
+    root.style.setProperty('--flash-x',`${cx.toFixed(1)}%`);
+    root.style.setProperty('--flash-x2',`${clampFlash(cx-14-Math.random()*14)}%`);
+    root.style.setProperty('--flash-x3',`${clampFlash(cx+14+Math.random()*14)}%`);
+    const p=randBannerBoltPose();
+    applyBannerBoltPose(prim,p);
+    root.classList.toggle('ltn-fork',fork);
+    if(fork&&sec){
+      let q,c=0;
+      do{q=randBannerBoltPose();c++}while(c<18&&Math.abs(q.left-p.left)<24);
+      q.scale*=0.78+Math.random()*0.12;
+      q.rot+=-8+Math.random()*16;
+      applyBannerBoltPose(sec,q);
+    }
+    root.classList.remove('ltn-strike');
+    void root.offsetWidth;
+    root.classList.add('ltn-strike');
+    setTimeout(()=>{if(root.isConnected)root.classList.remove('ltn-strike','ltn-fork')},1980);
+  };
+  const loop=()=>{
+    if(!root.isConnected) return;
+    if(!bannerLightningEnabled()){
+      teardownBannerLightning(root.closest('.bwrap'));
+      return;
+    }
+    strike();
+    if(!root.isConnected||!bannerLightningEnabled())return;
+    S.ltnTmr=setTimeout(loop,700+Math.random()*2000);
+  };
+  S.ltnTmr=setTimeout(loop,180+Math.random()*480);
+}
+function renderBanner(){
+  if(S.banTmr){clearInterval(S.banTmr);S.banTmr=null}
+  const bw=$('bwrap');
+  if(!bw)return;
+  teardownBannerLightning(bw);
+  const bns=S.banners||[];
+  if(!bns.length){bw.innerHTML='<div class="sk bwrap-sk"></div>';return}
+  const n=bns.length;
+  const w=n*100;
+  const slideW=100/n;
+  const slides=bns.map(b=>{
+    const badge=pick(b,'badge');
+    const badgeHtml=badge?`<div class="ban-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>${esc(badge)}</div>`:'';
+    return `<div class="ban-slide" style="flex:0 0 ${slideW}%"><img src="${b.image_url||''}" alt="${esc(t('bannerAlt'))}" loading="eager" decoding="async" draggable="false" onerror="this.onerror=null;var w=this.closest('.bwrap');if(w)w.innerHTML='<div class=\\'sk bwrap-sk\\'></div>'"/>${badgeHtml}</div>`;
+  }).join('');
+  const dots=n>1?`<div class="ban-dots" id="banDots" role="tablist">${bns.map((_,i)=>`<button type="button" class="ban-dot" role="tab" aria-selected="${i===0?'true':'false'}" aria-label="${i+1} / ${n}"></button>`).join('')}</div>`:'';
+  bw.innerHTML=`<div class="ban-vp" id="banVp"><div class="ban-track" id="banTrack" style="width:${w}%">${slides}</div></div>${dots}`;
+  syncBannerLightningOverlay();
+  S.banH=0;
+  if(n>1) setupBannerCarousel(n);
+  else{const tr=$('banTrack');if(tr)tr.style.transform='none'}
+}
+function setupBannerCarousel(n){
+  const tr=$('banTrack'),vp=$('banVp'), dots=$('banDots');
+  if(!tr||!vp) return;
+  const reduce=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const go=i=>{
+    const idx=((i%n)+n)%n;
+    S.banH=idx;
+    if(reduce()) tr.classList.add('ban-reduce');
+    else tr.classList.remove('ban-reduce');
+    tr.style.removeProperty('transition');
+    tr.style.transform=`translateX(calc(-100% * ${idx} / ${n}))`;
+    if(dots) dots.querySelectorAll('.ban-dot').forEach((d,k)=>d.setAttribute('aria-selected',k===idx?'true':'false'));
+  };
+  const stopAuto=()=>{if(S.banTmr){clearInterval(S.banTmr);S.banTmr=null}};
+  const startAuto=()=>{stopAuto();S.banTmr=setInterval(()=>go(S.banH+1),BAN_INTERVAL_MS)};
+  go(0);
+  startAuto();
+  if(dots) dots.querySelectorAll('.ban-dot').forEach((d,idx)=>{d.onclick=()=>{go(idx);startAuto()}});
+  let sx=0,sid=-1;
+  const TH=52;
+  vp.addEventListener('pointerdown',e=>{
+    if(e.button!==0)return;
+    stopAuto();
+    sx=e.clientX;sid=e.pointerId;try{vp.setPointerCapture(sid)}catch(_){ }
+  });
+  vp.addEventListener('pointermove',e=>{
+    if(sid<0||e.pointerId!==sid||reduce())return;
+    const dx=e.clientX-sx;
+    tr.style.transition='none';
+    tr.style.transform=`translateX(calc(-100% * ${S.banH} / ${n} + ${dx}px))`;
+  });
+  vp.addEventListener('pointerup',e=>{
+    if(sid<0||e.pointerId!==sid) return;
+    const dx=e.clientX - sx; sid=-1; try{vp.releasePointerCapture(e.pointerId)}catch(_){ }
+    tr.style.removeProperty('transition');
+    if(Math.abs(dx)<TH){ go(S.banH); startAuto(); return; }
+    if(dx<0) go(S.banH+1); else go(S.banH-1);
+    startAuto();
+  });
+  vp.addEventListener('pointercancel',e=>{
+    tr.style.removeProperty('transition');
+    if(sid<0) return;
+    if(e&&e.pointerId===sid) try{vp.releasePointerCapture(sid)}catch(_){ }
+    sid=-1;go(S.banH);startAuto();
+  });
+}
+
+// ── RENDER CATS ────────────────────────────────────────
+function renderCats(){
+  const w=$('tabsEl');
+  if(!S.cats.length){w.innerHTML='<div class="tabs-sk"><div class="sk tab-sk"></div><div class="sk tab-sk"></div></div>';return}
+  w.innerHTML='';
+  S.cats.forEach(c=>{
+    const b=document.createElement('button');
+    b.className='tab-btn'+(c.id===S.catId?' on':'');
+    b.textContent=pick(c,'name');
+    b.onclick=()=>{S.catId=c.id;document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('on'));b.classList.add('on');b.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});renderProds()};
+    w.appendChild(b);
+  });
+}
+
+function goFooterCategory(catId){
+  S.catId=catId;
+  renderCats();
+  renderProds();
+  try{closeDw()}catch(_){}
+  const ma=$('menu-anchor');
+  if(ma)ma.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderFooterCats(){
+  const nav=$('ftNavCats');
+  if(!nav)return;
+  nav.innerHTML='';
+  (S.cats||[]).forEach(c=>{
+    const a=document.createElement('a');
+    a.href='#menu-anchor';
+    a.textContent=pick(c,'name');
+    a.addEventListener('click',e=>{e.preventDefault();goFooterCategory(c.id)});
+    nav.appendChild(a);
+  });
+}
+
+// ── RENDER PRODS ───────────────────────────────────────
+function renderProds(){
+  const g=$('pgrid');
+  let items=S.prods.filter(p=>!S.catId||p.category_id===S.catId);
+  if(S.q){
+    const q=S.q.toLowerCase().trim();
+    items=items.filter(p=>[pick(p,'name'),pick(p,'desc'),pick(p,'ingredients'),pick(p,'tag'),p.badge].some(v=>String(v||'').toLowerCase().includes(q)));
+  }
+  if(S.filterHit || S.filterNew){
+    items=items.filter(p=>{
+      const b=String(p.badge||'').trim();
+      if(S.filterHit && b==='ХИТ') return true;
+      if(S.filterNew && b==='ЖАҢА') return true;
+      return false;
+    });
+  }
+  if(S.filterSort==='price_asc'){
+    items=[...items].sort((a,b)=>(Number(a.price)||0)-(Number(b.price)||0));
+  }else if(S.filterSort==='price_desc'){
+    items=[...items].sort((a,b)=>(Number(b.price)||0)-(Number(a.price)||0));
+  }
+  if(!items.length){
+    g.innerHTML=`<div class="empty"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3v7"/></svg><span>${t('noprod')}</span></div>`;return;
+  }
+  g.innerHTML='';
+  items.forEach((p,i)=>{
+    const name=pick(p,'name');
+    const desc=pick(p,'desc');
+    const hasImg=!!p.image_url;
+    const cornerHtml=(function(){
+      const badgeRaw=String(p.badge||'').trim();
+      const promo=/^(ХИТ|ЖАҢА)$/.test(badgeRaw);
+      const tagLbl=pick(p,'tag');
+      const legacyLbl=!tagLbl&&!promo&&badgeRaw;
+      let inner='';
+      if(tagLbl)inner+=`<div class="pc-tag">${esc(tagLbl)}</div>`;
+      else if(legacyLbl)inner+=`<div class="pc-tag">${esc(badgeRaw)}</div>`;
+      if(promo)inner+=`<div class="pc-badge">${esc(badgeRaw)}</div>`;
+      return inner?`<div class="pc-img-corner">${inner}</div>`:'';
+    })();
+    const c=document.createElement('div');c.className='pcard';c.style.animationDelay=(i*.055)+'s';
+    c.innerHTML=`
+      <div class="pc-img">
+        ${hasImg?`<img src="${p.image_url}" alt="${esc(name)}" onerror="this.style.display='none';this.nextElementSibling.style.opacity='1'">`:''}
+        <div class="pc-noimg" style="opacity:${hasImg?0:1};transition:opacity .2s"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3v7"/></svg></div>
+        ${cornerHtml}
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">${esc(name)}</div>
+        <div class="pc-desc">${esc(desc||t('defaultDesc'))}</div>
+        <div class="pc-bottom">
+          <div class="pc-prices">${(+p.old_price>0 && +p.old_price>(+p.price||0))?`<span class="pc-price-old" aria-hidden="true">₸ ${fmt(p.old_price)}</span>`:''}<span class="pc-price-now">₸ ${fmt(p.price)}</span></div>
+        </div>
+      </div>
+    `;
+    const qtyInCart=(S.cart.find(x=>x.id===p.id)?.qty)||0;
+    if(qtyInCart>0){
+      const q=document.createElement('div');q.className='pc-qty';
+      q.innerHTML=`
+        <button class="pc-qbtn" title="${esc(t('qtyDec'))}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <span class="pc-qv">${qtyInCart}</span>
+        <button class="pc-qbtn" title="${esc(t('qtyInc'))}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      `;
+      const [minusBtn,,plusBtn]=q.children;
+      minusBtn.onclick=e=>{e.stopPropagation();const r=changeQty(p.id,-1);if(S.curProd&&S.curProd.id===p.id)updateProdQtyUI();showToast(t(r?'qtyRemoved':'qtyLess'))};
+      plusBtn.onclick=e=>{e.stopPropagation();changeQty(p.id,1);if(S.curProd&&S.curProd.id===p.id)updateProdQtyUI();showToast(t('added'))};
+      c.querySelector('.pc-img').appendChild(q);
+    }else{
+      const ab=document.createElement('button');ab.className='pc-add';ab.title=t('addcart');
+      ab.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
+      ab.onclick=e=>{e.stopPropagation();addCart(p);showToast(t('added'))};
+      c.querySelector('.pc-img').appendChild(ab);
+    }
+    c.onclick=()=>openProd(p);
+    g.appendChild(c);
+  });
+}
+
+// ── LOAD DATA (cache-first, then refresh) ──────────────
+const CACHE_KEY='tokburger_cache_v3';
+function sbRows(result){
+  if(!result||result.error)return [];
+  const d=result.data;
+  return Array.isArray(d)?d:[];
+}
+function coerceSettingText(val){
+  let s=String(val??'').trim().replace(/[\u200B-\u200D\uFEFF]/g,'');
+  if(s.length>=2&&((s.startsWith('"')&&s.endsWith('"'))||(s.startsWith("'")&&s.endsWith("'"))))
+    s=s.slice(1,-1).trim();
+  return s;
+}
+function coalescePromoVideoUrl(){
+  const s=S.settings;
+  if(!s)return;
+  let raw=String(s.promo_video_url||'').trim();
+  if(raw)return;
+  for(const k of ['youtube_url','youtube_link','youtube','promo_video']){
+    raw=String(s[k]||'').trim();
+    if(raw){s.promo_video_url=raw;return}
+  }
+}
+function applyData(d){
+  S.settings={};
+  (d.settings||[]).forEach(r=>{
+    if(!r||typeof r.key!=='string')return;
+    S.settings[r.key]=coerceSettingText(r.value);
+  });
+  coalescePromoVideoUrl();
+  S.watpl={};
+  (d.watpl||[]).forEach(r=>{
+    if(!r||!r.lang||typeof r.template!=='string')return;
+    if(isValidWaTemplate(r.template))S.watpl[r.lang]=r.template;
+  });
+  S.banners=d.banners||[];S.cats=d.cats||[];S.prods=d.prods||[];
+  if(!S.cart.length){
+    const savedCart=readCart();
+    S.cart=savedCart
+      .map(item=>{
+        const fresh=(d.prods||[]).find(p=>p.id===item.id);
+        return fresh?{...fresh,qty:Number(item.qty)||1}:null;
+      })
+      .filter(Boolean);
+    updateBadge();
+  }
+  if(S.cats.length && !S.catId)S.catId=S.cats[0].id;
+  applySettings();applyI18n();renderBanner();renderCats();renderFooterCats();renderProds();renderFooterGallery();updateFilterBtn();
+}
+function readCache(){
+  try{
+    const raw=localStorage.getItem(CACHE_KEY);
+    if(!raw)return null;
+    const obj=JSON.parse(raw);
+    if(!obj||typeof obj!=='object')return null;
+    return obj;
+  }catch(_){return null}
+}
+function writeCache(d){
+  try{localStorage.setItem(CACHE_KEY,JSON.stringify({...d,ts:Date.now()}))}catch(_){}
+}
+
+async function fetchFresh(){
+  const client=getSb();
+  if(!client)return {settings:[],watpl:[],banners:[],cats:[],prods:[]};
+  const [rs,wa,bn,ca,pr]=await Promise.all([
+    client.from('tokburger_settings').select('key,value'),
+    client.from('tokburger_wa_templates').select('lang,template'),
+    client.from('tokburger_banners').select('*').eq('is_active',true).order('sort_order'),
+    client.from('tokburger_categories').select('*').eq('is_active',true).order('sort_order'),
+    client.from('tokburger_products').select('*').eq('is_active',true).order('sort_order'),
+  ]);
+  return {
+    settings: sbRows(rs),
+    watpl:    sbRows(wa),
+    banners:  sbRows(bn),
+    cats:     sbRows(ca),
+    prods:    sbRows(pr),
+  };
+}
+
+async function load(){
+  // 1) instant paint from localStorage cache (if any)
+  const cached=readCache();
+  if(cached){
+    try{applyData(cached)}catch(_){}
+  }
+  // 2) refresh from Supabase (http(s) және file:// — көп браузерлерде жұмыс істейді; болмаса кэш қалпына қайтады)
+  try{
+    const fresh=await fetchFresh();
+    writeCache(fresh);
+    applyData(fresh);
+  }catch(_){
+    if(!cached){
+      showToast(IS_LOCAL_FILE?t('fileOriginHint'):t('loadErr'));
+      $('bwrap').innerHTML='<div class="sk bwrap-sk"></div>';
+      $('tabsEl').innerHTML='<div class="tabs-sk"><div class="sk tab-sk"></div><div class="sk tab-sk"></div></div>';
+      $('pgrid').innerHTML=`<div class="empty"><span>${t('noprod')}</span></div>`;
+    }
+  }finally{
+    updateBadge();
+  }
+}
+function applySettings(){
+  const s=S.settings;
+  const instaUrl=s.instagram_url||DEFAULT_INSTAGRAM_URL;
+  if(instaUrl){
+    const di=$('dw-insta');if(di)di.href=instaUrl;
+    const fi=$('ft-insta');if(fi)fi.href=instaUrl;
+    const gItems=document.querySelectorAll('#ft-gallery .ft-gal-item');
+    gItems.forEach(el=>el.href=instaUrl);
+  }
+  if(s.whatsapp_number){const d=$('dw-wa');if(d)d.href='https://wa.me/'+s.whatsapp_number.replace(/\D/g,'')}
+  if(s.phone){
+    const d=$('dw-ph');if(d)d.href='tel:'+s.phone;
+    const fp=$('ft-phone-link');if(fp){fp.href='tel:'+s.phone;fp.textContent=s.phone}
+  }else{
+    const fp=$('ft-phone-link');if(fp){fp.removeAttribute('href');fp.textContent=t('phone')}
+  }
+  const dh=$('dw-hours');if(dh)dh.textContent=s.working_hours||'—';
+  const fh=$('ft-hours');if(fh)fh.textContent=s.working_hours||'—';
+  try{
+    const cities=JSON.parse(s.cities||'[]');
+    const dc=$('dw-cities');if(dc)dc.innerHTML=cities.map(c=>`<div class="city-li"><div class="city-dot"></div>${esc(c)}</div>`).join('');
+    const fc=$('ft-cities');if(fc)fc.textContent=cities.length?cities.join(', '):'—';
+  }catch(e){}
+  const ftr=$('ftLnk7');
+  if(ftr){
+    ftr.href=REVIEW_2GIS_URL;
+    ftr.target='_blank';
+    ftr.rel='noopener noreferrer';
+  }
+  syncBannerLightningOverlay();
+}
+function renderFooterGallery(){
+  const box=$('ft-gallery');
+  if(!box)return;
+  const pics=(S.prods||[])
+    .map(p=>String(p.image_url||'').trim())
+    .filter(Boolean)
+    .slice(0,6);
+  const instaHref=S.settings.instagram_url||DEFAULT_INSTAGRAM_URL;
+  const makePlaceholder=(a)=>{
+    if(a.querySelector('.ft-gal-ph'))return;
+    a.innerHTML='<span class="ft-gal-ph">TOKBURGER</span>';
+  };
+  const renderSlots=pics.length?pics:Array.from({length:6}).map(()=>'');
+  box.innerHTML='';
+  renderSlots.forEach((src)=>{
+    const a=document.createElement('a');
+    a.className='ft-gal-item';
+    a.href=instaHref;
+    a.target='_blank';
+    a.rel='noopener';
+    if(!src){
+      makePlaceholder(a);
+      box.appendChild(a);
+      return;
+    }
+    const img=document.createElement('img');
+    img.src=src;
+    img.alt=t('logoAlt');
+    img.loading='lazy';
+    img.decoding='async';
+    img.onerror=()=>{
+      img.remove();
+      makePlaceholder(a);
+    };
+    a.appendChild(img);
+    box.appendChild(a);
+  });
+}
+const _ftYr=$('ftYear');if(_ftYr)_ftYr.textContent=new Date().getFullYear();
+const _langBtn=$('langBtn');
+if(_langBtn){
+  _langBtn.onclick=()=>{
+    S.lang = S.lang==='ru' ? 'kk' : 'ru';
+    try{localStorage.setItem('tokburger_lang',S.lang)}catch(_){}
+    applyI18n();
+    applySettings();
+    renderBanner();
+    renderCats();
+    renderFooterCats();
+    renderProds();
+    if($('cartSh').classList.contains('on'))renderCart();
+    if(S.curProd && $('prodSh').classList.contains('on'))openProd(S.curProd);
+  };
+}
+
+// ── 10× тез басу: © + құқық жолы → баптаулар ───────────
+let _rightsClicks=0,_rightsTmr;
+const _rightsLine=$('ftRightsLine');
+if(_rightsLine){
+  _rightsLine.addEventListener('click',e=>{
+    e.preventDefault();
+    _rightsClicks++;
+    clearTimeout(_rightsTmr);
+    _rightsTmr=setTimeout(()=>{_rightsClicks=0},3000);
+    if(_rightsClicks>=10){_rightsClicks=0;window.location.href='tb-zhuristik-kiosk.html'}
+  });
+}
+
+// ── HELPERS ────────────────────────────────────────────
+function fmt(n){return Number(n||0).toLocaleString('ru-KZ')}
+function esc(s){const d=document.createElement('div');d.textContent=String(s??'');return d.innerHTML}
+function escAttr(s){return String(s??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
+function normalizeMediaUrlForEmbed(raw){
+  let u=String(raw||'').trim().replace(/[\u200B-\u200D\uFEFF]/g,'');
+  if(!u)return '';
+  if(u.startsWith('//'))return 'https:'+u;
+  if(/^https?:\/\//i.test(u))return u;
+  try{return new URL(u).href}catch(_){}
+  if(/^[a-z0-9][a-z0-9.-]*\.[a-z]{2,}([/?#]|$)/i.test(u))
+    return 'https://'+u.replace(/^\/+/,'');
+  return u;
+}
+function youtubeIdFromUrl(raw){
+  const u=normalizeMediaUrlForEmbed(raw);
+  if(!u)return '';
+  try{
+    const x=new URL(u);
+    const h=x.hostname.replace(/^www\./,'').toLowerCase();
+    if(h==='youtu.be'){
+      const id=x.pathname.replace(/^\//,'').split('/')[0];
+      return(id.split('?')[0]||'').split('#')[0];
+    }
+    if(h==='youtube.com'||h==='m.youtube.com'||h==='music.youtube.com'){
+      const v=x.searchParams.get('v');
+      if(v)return v;
+      const m=x.pathname.match(/\/(?:embed|shorts|live)\/([^/?]+)/);
+      if(m)return m[1];
+    }
+  }catch(_){}
+  return '';
+}
+function syncBrandClip(){
+  const mount=$('brandClipMount');
+  if(!mount)return;
+  const raw=normalizeMediaUrlForEmbed(String(S.settings?.promo_video_url||'').trim());
+  mount.innerHTML='';
+  const playIc='<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  const fallback=()=>{
+    const ig=S.settings?.instagram_url||DEFAULT_INSTAGRAM_URL;
+    mount.innerHTML='<div class="brand-clip-fallback" role="region"><div class="brand-clip-fb-inner"><span class="brand-clip-play-ic">'+playIc+'</span><strong>'+esc(t('brandClipFbTitle'))+'</strong><p>'+esc(t('brandClipFbTxt'))+'</p><a class="brand-clip-insta" href="'+escAttr(ig)+'" target="_blank" rel="noopener">'+esc(t('brandClipOpenInsta'))+'</a></div></div>';
+  };
+  if(!raw){fallback();return}
+  const yid=youtubeIdFromUrl(raw);
+  if(yid){
+    const yq='autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1';
+    mount.innerHTML='<div class="brand-clip-ratio"><iframe title="'+escAttr(t('brandClipTitle'))+'" src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(yid)+'?'+yq+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>';
+    return;
+  }
+  const vm=raw.match(/vimeo\.com\/(?:video\/)?(\d+)/i);
+  if(vm&&vm[1]){
+    mount.innerHTML='<div class="brand-clip-ratio"><iframe title="'+escAttr(t('brandClipTitle'))+'" src="https://player.vimeo.com/video/'+encodeURIComponent(vm[1])+'?autoplay=1&muted=1&playsinline=1&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>';
+    return;
+  }
+  const lower=raw.toLowerCase();
+  const isVid=/\.(mp4|webm|ogg)(\?|#|$)/i.test(lower)||lower.includes('.supabase.co/storage')||lower.includes('/storage/v1/object');
+  if(isVid){
+    const mime=lower.includes('.webm')?'video/webm':lower.includes('.ogg')?'video/ogg':'video/mp4';
+    mount.innerHTML='<div class="brand-clip-ratio"><video controls playsinline muted autoplay preload="metadata"><source src="'+escAttr(raw)+'" type="'+mime+'"/>'+esc(t('videoNoHtml5'))+'</video></div>';
+    return;
+  }
+  fallback();
+}
+function noImgSvg(){return`<div class="noimg"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3v7"/></svg></div>`}
+function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('on');clearTimeout(t._t);const ms=String(msg||'').length>42?3200:2200;t._t=setTimeout(()=>t.classList.remove('on'),ms)}
+function initSheetHandleDrag(sheet,onClose){
+  const h=sheet&&sheet.querySelector('.sh-drag');
+  if(!h) return;
+  const ovl=$('ovl');
+  const mFill=$('modalDragFill');
+  const isDesk=()=>window.matchMedia('(min-width:900px)').matches;
+  const reduce=()=>window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const thClose=()=>Math.min(120, window.innerHeight*0.2);
+  function upRub(d){
+    if(d>=0) return d>440 ? 440 + (d-440)*0.22 : d;
+    return -Math.min(64, -d*0.36);
+  }
+  function clearBottomFill(){
+    if(!mFill) return;
+    mFill.classList.remove('is-on');
+    mFill.style.height='0px';
+    mFill.style.zIndex='';
+  }
+  function setDragTransform(dy){
+    const u=upRub(dy);
+    const t=isDesk()
+      ? `translate(calc(-50% + 0px), calc(-50% + ${u}px)) scale(1)`
+      : `translateY(${u}px)`;
+    sheet.style.transform=t;
+    if(ovl && ovl.classList.contains('on') && dy>0)
+      ovl.style.opacity=String(0.42+0.58*(1-Math.min(0.5, dy/480)));
+    if(mFill && !isDesk() && u<0){
+      mFill.classList.add('is-on');
+      mFill.style.height=Math.min(120, -u)+'px';
+      mFill.style.zIndex=sheet.id==='cfmModal'?'625':'499';
+    }else if(mFill) clearBottomFill();
+  }
+  function clearOvlOp(){if(ovl) ovl.style.removeProperty('opacity');clearBottomFill()}
+  let cap=-1, y0=0, lastY=0, lastT=0, vLast=0;
+  function snapBack(){
+    clearOvlOp();
+    const spring=reduce() ? 'transform .1s linear' : 'transform .38s cubic-bezier(.25,.9,.3,1.12)';
+    sheet.style.transition=spring;
+    sheet.style.transform=isDesk() ? 'translate(-50%,-50%) scale(1)' : 'translateY(0)';
+    let done=false;
+    const end=ev=>{
+      if(ev && ev.propertyName && ev.propertyName!=='transform') return;
+      if(done) return; done=true;
+      sheet.classList.remove('sheet--dragging');
+      sheet.style.transition='';
+      sheet.style.transform='';
+    };
+    sheet.addEventListener('transitionend',end);
+    setTimeout(()=>{sheet.removeEventListener('transitionend',end);end();}, 460);
+  }
+  function snapClose(){
+    const ease=reduce() ? 'transform .2s ease-out' : 'transform .3s cubic-bezier(.4,0,.2,1)';
+    sheet.style.transition=ease;
+    sheet.style.transform=isDesk() ? 'translate(calc(-50% + 0px), calc(-50% + 100vh)) scale(1)' : 'translateY(105%)';
+    let done=false;
+    const end=ev=>{
+      if(ev && ev.propertyName && ev.propertyName!=='transform') return;
+      if(done) return; done=true;
+      onClose();
+      sheet.classList.remove('sheet--dragging');
+      sheet.style.transition='';
+      sheet.style.transform='';
+      clearOvlOp();
+    };
+    sheet.addEventListener('transitionend',end);
+    setTimeout(()=>{sheet.removeEventListener('transitionend',end);end();}, 420);
+  }
+  h.addEventListener('pointerdown',e=>{
+    if(e.button!==0 || !sheet.classList.contains('on')) return;
+    e.preventDefault();
+    try{h.setPointerCapture(e.pointerId)}catch(_){}
+    cap=e.pointerId;
+    y0=lastY=e.clientY;
+    vLast=0;
+    const n=performance.now();
+    lastT=n;
+    sheet.classList.add('sheet--dragging');
+    sheet.style.transition='none';
+  });
+  h.addEventListener('pointermove',e=>{
+    if(e.pointerId!==cap) return;
+    e.preventDefault();
+    const n=performance.now();
+    vLast=(e.clientY - lastY) / Math.max(8, n - lastT);
+    lastY=e.clientY;
+    lastT=n;
+    setDragTransform(e.clientY - y0);
+  });
+  h.addEventListener('pointerup',e=>{
+    if(e.pointerId!==cap) return;
+    try{h.releasePointerCapture(e.pointerId)}catch(_){ }
+    const d=e.clientY - y0;
+    const flingDown=d>28 && vLast>0.2;
+    const th=thClose();
+    cap=-1;
+    const isCart1=sheet.id==='cartSh' && !isDesk() && S.cart && S.cart.length===1;
+    const mid=sheet.classList.contains('cartSh--mid');
+    if(isCart1){
+      if(!mid && (d<-32 || (vLast<-0.16 && d<-8))){
+        sheet.classList.add('cartSh--mid');
+        snapBack();
+        return;
+      }
+      if(mid && d>42 && d<th*0.92 && !flingDown){
+        sheet.classList.remove('cartSh--mid');
+        snapBack();
+        return;
+      }
+    }
+    if(d>th || flingDown) snapClose();
+    else snapBack();
+  });
+  h.addEventListener('pointercancel',e=>{
+    if(e.pointerId!==cap) return;
+    cap=-1;
+    snapBack();
+  });
+}
+initSheetHandleDrag($('filterSh'), closeFilter);
+initSheetHandleDrag($('cartSh'), closeCart);
+initSheetHandleDrag($('prodSh'), closeProd);
+initSheetHandleDrag($('cfmModal'), closeConfirm);
+
+// lift FAB slightly near footer so it does not cover links
+const _fabStack=document.querySelector('.fab-stack');
+const _footer=document.querySelector('footer');
+if(_fabStack&&_footer&&'IntersectionObserver' in window){
+  new IntersectionObserver(([entry])=>{
+    _fabStack.classList.toggle('raised',entry.isIntersecting);
+  },{threshold:.12}).observe(_footer);
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if($('cfmModal')&&$('cfmModal').classList.contains('on')){closeConfirm();return}
+  if($('prodSh')&&$('prodSh').classList.contains('on')){closeProd();return}
+  if($('cartSh')&&$('cartSh').classList.contains('on')){closeCart();return}
+  if($('filterSh')&&$('filterSh').classList.contains('on')){closeFilter();return}
+  if($('dw')&&$('dw').classList.contains('on')){closeDw();return}
+});
+const _stTop=$('scrollTopBtn');
+if(_stTop){
+  const updScrollTop=()=>_stTop.classList.toggle('on',window.scrollY>400);
+  window.addEventListener('scroll',updScrollTop,{passive:true});
+  updScrollTop();
+  _stTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+}
+
+applyI18n();
+
+(function initTapOrangeLightning(){
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  let lastAt=0;
+  let suppressClickUntil=0;
+  let touchTap=null;
+  let ptrTap=null;
+
+  function isLogoUi(node){
+    try{return !!(node&&node.closest&&(node.closest('.nb-logo')||node.closest('#dwLogoRow')))}
+    catch(_){return false}
+  }
+
+  function zigzag(ax,ay,a,len,segs){
+    let x=ax,y=ay;
+    let d=`M ${x.toFixed(2)} ${y.toFixed(2)}`;
+    let ang=a;
+    const step=len/Math.max(3,segs);
+    for(let i=1;i<=segs;i++){
+      const seg=step*(0.74+Math.random()*0.46);
+      ang+=(Math.random()-0.5)*0.88;
+      x+=Math.cos(ang)*seg;
+      y+=Math.sin(ang)*seg;
+      d+=` L ${x.toFixed(2)} ${y.toFixed(2)}`;
+    }
+    return d;
+  }
+
+  function buildOrangePhotoLikePlasma(uid,rotDeg){
+    const cx=100,cy=100;
+    const paths=[];
+    const arcs=11;
+    for(let k=0;k<arcs;k++){
+      const a0=(Math.PI*2*k)/arcs+(Math.random()-0.5)*0.12;
+      const span=(Math.PI*2/arcs)*(0.62+Math.random()*0.28);
+      const r=48+Math.random()*18;
+      let x=cx+Math.cos(a0)*r,y=cy+Math.sin(a0)*r;
+      let d=`M ${x.toFixed(2)} ${y.toFixed(2)}`;
+      const steps=5+((Math.random()*5)|0);
+      for(let i=1;i<=steps;i++){
+        const t=i/steps;
+        const ang=a0+t*span+(Math.random()-0.5)*0.32;
+        const rr=r+(Math.random()-0.5)*16;
+        x=cx+Math.cos(ang)*rr;
+        y=cy+Math.sin(ang)*rr;
+        d+=` L ${x.toFixed(2)} ${y.toFixed(2)}`;
+      }
+      paths.push(d);
+    }
+    for(let i=0;i<7;i++){
+      const ang=Math.random()*Math.PI*2;
+      paths.push(zigzag(cx,cy,ang,26+Math.random()*36,7));
+    }
+    for(let i=0;i<6;i++){
+      const ang=(Math.PI*2*i)/6+(Math.random()-0.5)*0.35;
+      paths.push(zigzag(cx,cy,ang,58+Math.random()*40,11));
+    }
+    for(let i=0;i<14;i++){
+      const ang=Math.random()*Math.PI*2;
+      const dist=34+Math.random()*34;
+      const sx=cx+Math.cos(ang)*dist;
+      const sy=cy+Math.sin(ang)*dist;
+      paths.push(zigzag(sx,sy,ang+(Math.random()-0.5)*2.1,18+Math.random()*36,6));
+    }
+    let sparks='';
+    for(let i=0;i<26;i++){
+      const ang=Math.random()*Math.PI*2;
+      const rad=(14+Math.random()*78)*(0.85+Math.random()*0.32);
+      const px=cx+Math.cos(ang)*rad;
+      const py=cy+Math.sin(ang)*rad*(0.9+Math.random()*0.18);
+      sparks+=`<circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${(0.35+Math.random()*2.1).toFixed(2)}" fill="#ffc48a" opacity="${(0.12+Math.random()*0.48).toFixed(3)}"/>`;
+      if(i%9===0){
+        const s=2.2+Math.random()*4;
+        sparks+=`<path d="M${px.toFixed(1)} ${(py-s).toFixed(1)} L${px.toFixed(1)} ${(py+s).toFixed(1)} M${(px-s).toFixed(1)} ${py.toFixed(1)} L${(px+s).toFixed(1)} ${py.toFixed(1)}" stroke="#ffa23a" stroke-width="0.5" opacity="0.42"/>`;
+      }
+    }
+    function layerPaths(stroke,w,op){
+      return paths.map(function(rd){
+        return `<path fill="none" stroke="${stroke}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" opacity="${op}" d="${rd}"/>`;
+      }).join('');
+    }
+    return (
+      `<svg class="tap-ltn-fx__svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="transform:rotate(${rotDeg.toFixed(1)}deg)">`+
+      '<defs>'+
+      `<linearGradient id="${uid}hot" x1="72" y1="62" x2="132" y2="148" gradientUnits="userSpaceOnUse">`+
+      '<stop stop-color="#fff0e4"/><stop offset=".20" stop-color="#ffd9a8"/><stop offset=".45" stop-color="#ff9230"/><stop offset=".72" stop-color="#ff6b0a"/><stop offset="1" stop-color="#c2410c"/>'+
+      '</linearGradient>'+
+      `<filter id="${uid}glow" x="-45%" y="-45%" width="190%" height="190%" color-interpolation-filters="sRGB">`+
+      '<feGaussianBlur stdDeviation="2.6" result="bl"/>'+
+      '<feMerge><feMergeNode in="bl"/><feMergeNode in="SourceGraphic"/></feMerge>'+
+      '</filter>'+
+      '</defs>'+
+      `<g filter="url(#${uid}glow)">${sparks}${layerPaths('#f97316',4.6,.14)}${layerPaths('#ffa64d',2.55,.30)}</g>`+
+      `${layerPaths('#ffe0c2',1.35,.46)}`+
+      `${layerPaths('url(#'+uid+'hot)',1,.88)}`+
+      '</svg>'
+    );
+  }
+
+  function spawnTapBolt(clientX,clientY,opts){
+    opts=opts||{};
+    const now=performance.now();
+    const minGap=opts.logo?160:140;
+    if(now-lastAt<minGap)return;
+    lastAt=now;
+    const x=Number(clientX),y=Number(clientY);
+    if(!Number.isFinite(x)||!Number.isFinite(y))return;
+
+    const wrap=document.createElement('div');
+    wrap.className=opts.logo?'tap-ltn-fx tap-ltn-fx--logo':'tap-ltn-fx';
+    wrap.setAttribute('aria-hidden','true');
+    wrap.style.left=`${x}px`;
+    wrap.style.top=`${y}px`;
+
+    const uid=`tap${(Math.random()*1e9)|0}`;
+    const rot=-38+Math.random()*76;
+    wrap.innerHTML=buildOrangePhotoLikePlasma(uid,rot);
+
+    const root=document.documentElement||document.body;
+    root.appendChild(wrap);
+
+    const kill=()=>{try{wrap.remove()}catch(_){}};
+    setTimeout(kill,820);
+  }
+
+  document.addEventListener('touchstart',e=>{
+    const t=(e.changedTouches&&e.changedTouches[0])||(e.touches&&e.touches[0]);
+    if(!t)return;
+    touchTap={x:t.clientX,y:t.clientY,time:performance.now()};
+  },{passive:true,capture:true});
+
+  document.addEventListener('touchend',e=>{
+    const t=e.changedTouches&&e.changedTouches[0];
+    if(!t||!touchTap)return;
+    if(isLogoUi(e.target)){touchTap=null;return}
+    const dx=t.clientX-touchTap.x,dy=t.clientY-touchTap.y;
+    const dt=performance.now()-touchTap.time;
+    touchTap=null;
+    if(dt>520)return;
+    if(dx*dx+dy*dy>1400)return;
+    suppressClickUntil=performance.now()+550;
+    spawnTapBolt(t.clientX,t.clientY);
+  },{passive:true,capture:true});
+
+  document.addEventListener('touchcancel',()=>{touchTap=null},{passive:true,capture:true});
+
+  document.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    ptrTap={x:e.clientX,y:e.clientY,t:performance.now(),id:e.pointerId};
+  },{passive:true,capture:true});
+
+  document.addEventListener('pointerup',e=>{
+    if(!ptrTap)return;
+    if(e.pointerId!==ptrTap.id)return;
+    if(isLogoUi(e.target)){ptrTap=null;return}
+    const dx=e.clientX-ptrTap.x,dy=e.clientY-ptrTap.y;
+    const dt=performance.now()-ptrTap.t;
+    ptrTap=null;
+    if(dt>520)return;
+    if(dx*dx+dy*dy>1400)return;
+    suppressClickUntil=performance.now()+550;
+    spawnTapBolt(e.clientX,e.clientY);
+  },{passive:true,capture:true});
+
+  document.addEventListener('pointercancel',e=>{
+    if(ptrTap&&e.pointerId===ptrTap.id)ptrTap=null;
+  },{passive:true,capture:true});
+
+  document.addEventListener('click',e=>{
+    if(performance.now()<suppressClickUntil)return;
+    if(isLogoUi(e.target))return;
+    spawnTapBolt(e.clientX,e.clientY);
+  },true);
+
+  document.querySelectorAll('.nb-logo,#dwLogoRow').forEach(function(el){
+    el.addEventListener('click',function(){
+      const r=el.getBoundingClientRect();
+      suppressClickUntil=performance.now()+550;
+      spawnTapBolt(r.left+r.width/2,r.top+r.height/2,{logo:true});
+    });
+  });
+})();
+
+load();
+
+if('serviceWorker' in navigator&&!IS_LOCAL_FILE){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "TokBurger",
+  "short_name": "TokBurger",
+  "description": "TokBurger — бургерлер мен фастфуд, онлайн мәзір және WhatsApp арқылы тапсырыс.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FF5300",
+  "theme_color": "#171826",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

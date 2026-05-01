@@ -1,0 +1,26 @@
+<!-- TokBurger banner lightning A - elegant top-attached white-blue strike. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 172" fill="none" aria-hidden="true">
+  <defs>
+    <filter id="glowA" x="-70%" y="-30%" width="240%" height="170%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 .4  0 0 0 0 .82  0 0 0 0 1  0 0 0 .86 0" result="blue"/>
+      <feMerge><feMergeNode in="blue"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="coreA" x1="45" y1="0" x2="22" y2="168" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".45" stop-color="#f3fbff"/>
+      <stop offset="1" stop-color="#82d8ff"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#glowA)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M45 0 L35 28 L48 38 L31 61 L42 72 L26 96 L35 107 L19 132 L27 145 L20 168" stroke="#74d4ff" stroke-width="6.8" opacity=".11"/>
+    <path d="M45 0 L35 28 L48 38 L31 61 L42 72 L26 96 L35 107 L19 132 L27 145 L20 168" stroke="#c8f2ff" stroke-width="4.1" opacity=".27"/>
+    <path d="M45 0 L35 28 L48 38 L31 61 L42 72 L26 96 L35 107 L19 132 L27 145 L20 168" stroke="#ffffff" stroke-width="2.25"/>
+    <path d="M45 0 L35 28 L48 38 L31 61 L42 72 L26 96 L35 107 L19 132 L27 145 L20 168" stroke="url(#coreA)" stroke-width=".95" opacity=".96"/>
+    <path d="M31 61 L57 73 L69 93" stroke="#ffffff" stroke-width="1.05" opacity=".68"/>
+    <path d="M31 61 L57 73 L69 93" stroke="#94deff" stroke-width=".45" opacity=".85"/>
+    <path d="M26 96 L12 108 L5 125" stroke="#ffffff" stroke-width=".95" opacity=".6"/>
+    <path d="M26 96 L12 108 L5 125" stroke="#bdefff" stroke-width=".4" opacity=".78"/>
+    <path d="M19 132 L42 144 L57 164" stroke="#ffffff" stroke-width=".78" opacity=".42"/>
+  </g>
+</svg>
